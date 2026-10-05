@@ -55,6 +55,15 @@ const Impact = () => {
           </div>
         </div>
 
+        <div ClassName="">
+            <div className="ml-50 mt-14 w-[750px] p-8 sm:p-12 rounded-3xl bg-[#fcf6eb] text-black flex flex-col items-center justify-between gap-8 border border-[#382C27] shadow-xl">
+              <div className="flex flex-col max-w-2xl items-center ">
+                <h2 className="text-lg font-bold mb-4">Partnership for Mentorship or Strategy</h2>
+                <p className="text-[#634c3c] text-xs ">Interested in booking a strategic SME session or exploring executive mentorship programs?</p>
+                <button className="mt-4 px-6 py-2 rounded-full bg-black text-white font-bold hover:bg-[#634c3c] transition duration-300">GET IN TOUCH</button>
+              </div>
+            </div>
+          </div>
 
       </div>
     </div>
