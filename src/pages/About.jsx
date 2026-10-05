@@ -7,18 +7,28 @@ const About = () => {
     <div className="py-12 pb-24 px-6 bg-[#FDFBF7]">
       <div className="max-w-7xl mx-auto">
         
-        <div className="max-w-4xl mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#EADFCF]/60 border border-[#D9C7B0] text-[#5C4A3E] text-[11px] font-bold uppercase tracking-widest mb-6 shadow-sm">
-            <Sparkles className="w-3.5 h-3.5 text-[#8C6D58]" />
-            <span>Executive Biography & Strategic Vision</span>
+        <div className="relative mb-12 title flex flex-col md:flex-row md:items-start md:justify-between gap-6">
+          <div className="max-w-4xl relative z-10">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#EADFCF]/60 border border-[#D9C7B0] text-[#5C4A3E] text-[11px] font-bold uppercase tracking-widest mb-6 shadow-sm">
+              <Sparkles className="w-3.5 h-3.5 text-[#8C6D58]" />
+              <span>Executive Biography & Strategic Vision</span>
+            </div>
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-[#1A1412] tracking-tight leading-[1.1] mb-6">
+              How do you <span className="font-light italic text-[#8C6D58]">scale and structure</span> your business with absolute clarity?
+            </h1>
+            <p className="text-[#5C4A3E] text-lg sm:text-xl font-normal max-w-3xl leading-relaxed">
+              It begins where <strong className="text-theme-heading font-semibold">financial discipline meets operational courage</strong>. Guided by 14+ years as Co-Founder and CFO at Deda Hospital Ltd, I combine institutional governance with dedicated, hands-on advisory—helping visionaries turn complex financial architecture into clear roadmaps for resilient scale. <span className="text-theme-accent font-medium italic">Wherever you are on your growth journey, I am here to help you thrive.</span>
+            </p>
           </div>
 
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-[#1A1412] tracking-tight leading-[1.1] mb-6">
-            What is the strategic path to <span className="font-light italic text-[#8C6D58]">scale and structure</span> your business with absolute clarity?
-          </h1>
-          <p className="text-[#5C4A3E] text-lg sm:text-xl font-normal max-w-3xl leading-relaxed">
-            Co-Founder and CFO/Admin Director at Deda Hospital Ltd. A seasoned executive and Fellow of the ACCA with over 14 years of operational leadership transforming financial architectures across healthcare and enterprise sectors.
-          </p>
+          <div className="hidden md:flex flex-col items-end pt-2 select-none pointer-events-none opacity-80 hover:opacity-100 transition-opacity">
+            <span className="font-serif italic text-6xl lg:text-9xl font-light text-[#8C6D58]/20 tracking-tighter leading-none">
+              Juliana Onuh
+            </span>
+            <span className="text-[10px] font-mono font-bold uppercase tracking-[0.3em] text-[#8C6D58]/40 -mt-1 pr-1">
+              EST. 2010 • FCCA
+            </span>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch mb-20">
@@ -92,7 +102,7 @@ const About = () => {
 
         </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-12 border-t border-[#EADFCF]">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-12 border-t border-[#EADFCF]">
           <div className="p-8 rounded-3xl bg-[#F4EFE6] border border-[#EADFCF] hover:border-[#8C6D58]/50 transition-all shadow-sm">
             <Target className="w-8 h-8 text-[#8C6D58] mb-4" />
             <h3 className="text-lg font-bold text-[#1A1412] mb-2">Strategic Restructuring</h3>
