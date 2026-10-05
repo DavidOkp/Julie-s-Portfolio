@@ -4,12 +4,27 @@ import { ArrowRight, Award, Sparkles, Target, ShieldCheck, Briefcase, Quote } fr
 
 const About = () => {
   return (
-    <div className="py-12 pb-24 px-6 bg-[#FDFBF7]">
-      <div className="max-w-7xl mx-auto">
+    <div className="py-12 pb-24 px-6 bg-[#FDFBF7] relative overflow-hidden">
+      
+      <div 
+        className="absolute top-0 right-0 w-full sm:w-2/3 md:w-1/2 h-[600px] pointer-events-none select-none z-0 opacity-15 grayscale contrast-125 mix-blend-multiply"
+        style={{
+          maskImage: 'radial-gradient(circle at 70% 30%, black 10%, transparent 75%)',
+          WebkitMaskImage: 'radial-gradient(circle at 70% 30%, black 10%, transparent 75%)',
+        }}
+      >
+        <img 
+          src="./src/assets/juliee-onuh.jpeg" 
+          alt="" 
+          className="w-full h-full object-cover object-top filter sepia-[0.2]"
+        />
+      </div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
         
         <div className="relative mb-12 title flex flex-col md:flex-row md:items-start md:justify-between gap-6">
           <div className="max-w-4xl relative z-10">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#EADFCF]/60 border border-[#D9C7B0] text-[#5C4A3E] text-[11px] font-bold uppercase tracking-widest mb-6 shadow-sm">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#EADFCF]/60 border border-[#D9C7B0] text-[#5C4A3E] text-[11px] font-bold uppercase tracking-widest mb-6 shadow-sm backdrop-blur-sm">
               <Sparkles className="w-3.5 h-3.5 text-[#8C6D58]" />
               <span>Executive Biography & Strategic Vision</span>
             </div>
@@ -19,15 +34,6 @@ const About = () => {
             <p className="text-[#5C4A3E] text-lg sm:text-xl font-normal max-w-3xl leading-relaxed">
               It begins where <strong className="text-theme-heading font-semibold">financial discipline meets operational courage</strong>. Guided by 14+ years as Co-Founder and CFO at Deda Hospital Ltd, I combine institutional governance with dedicated, hands-on advisory—helping visionaries turn complex financial architecture into clear roadmaps for resilient scale. <span className="text-theme-accent font-medium italic">Wherever you are on your growth journey, I am here to help you thrive.</span>
             </p>
-          </div>
-
-          <div className="hidden md:flex flex-col items-end pt-2 select-none pointer-events-none opacity-80 hover:opacity-100 transition-opacity">
-            <span className="font-serif italic text-6xl lg:text-9xl font-light text-[#8C6D58]/20 tracking-tighter leading-none">
-              Juliana Onuh
-            </span>
-            <span className="text-[10px] font-mono font-bold uppercase tracking-[0.3em] text-[#8C6D58]/40 -mt-1 pr-1">
-              EST. 2010 • FCCA
-            </span>
           </div>
         </div>
 
