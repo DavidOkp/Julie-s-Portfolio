@@ -1,4 +1,6 @@
 import React from 'react'
+import { Target } from 'lucide-react';
+
 
 const Impact = () => {
   return (
