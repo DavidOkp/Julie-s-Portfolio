@@ -25,9 +25,9 @@ const Impact = () => {
               <span className="text-[12px] font-bold tracking-widest text-[#634c3c] block mb-2">
                 ENTERPRISE BUILDING
               </span>
-              <h2 className="text-2xl sm:text-3xl font-bold mb-4">Women in Business Mentorship</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold mb-4">SME Finacial Liberation</h2>
               <p className="text-[#634c3c] text-md leading-relaxed">
-                Providing dedicated mentorship for female founders and emerging women executives. Helping them navigate executive boardrooms, raise capital within confidence, and build long-term institutional resilience.
+                Startups often struggle not from lack of vision, but from inadequate capital structuring and weak internal controls. Through tailored advisory, I help business owners establish clear reporting frameworks, cash flow optimization, and scalable operating models.
               </p>
               <div className='border-t-[#D9C7B0] border-t-1 mt-18'></div>
               <div>
