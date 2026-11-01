@@ -3,6 +3,7 @@
 
 @theme {
   --font-sans: "Inter", sans-serif;
+  --font-sans-serif: "Inter", sans-serif;
 }
 
 html,
