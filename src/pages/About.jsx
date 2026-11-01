@@ -70,7 +70,7 @@ const About = () => {
         <Insights />
      </section>
 
-      <section aria-labelledby="vision-title" className="mx-auto px-20 py-40 pt- sm:pb-24 bg-[radial-gradient(ellipse_at_18%_45%,#fffefa_0%,#FDFBF7_58%,#F4EFE6_100%)]">
+      <section aria-labelledby="vision-title" className="mx-auto px-40 py-40 pt- sm:pb-24 bg-[radial-gradient(ellipse_at_18%_45%,#fffefa_0%,#FDFBF7_58%,#F4EFE6_100%)]">
         <div className="grid grid-cols-1 items-stretch gap-10 lg:grid-cols-12">
           <div className="group relative lg:col-span-7">
             <div className="relative h-full min-h-[520px] overflow-hidden rounded-3xl border border-[#EADFCF] bg-[#F4EFE6] p-2 shadow-xl">
