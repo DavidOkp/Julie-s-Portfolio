@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { ArrowRight, Menu, X } from 'lucide-react'
-import { navItems } from '../utils/utility'
+import { navItems } from '../data/header.data'
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -27,7 +27,7 @@ const Navbar = () => {
   return (
     <>
       {/* Main Navigation Header */}
-      <nav className="sticky top-0 z-40 border- border-[#EADFCF b-[#FDFBF7]/95 backdrop-blur-md">
+      <nav className="sticky top-0 z-40 border-b border-[#EADFCF] bg-[#FDFBF7]/95 backdrop-blur-md">
         <div className="mx-auto grid h-24 max-w-[1680px] grid-cols-[1fr_auto] items-center px-5 sm:px-8 lg:h-20 lg:grid-cols-[1fr_auto_1fr] lg:px-12">
           
           {/* Brand Logo */}
