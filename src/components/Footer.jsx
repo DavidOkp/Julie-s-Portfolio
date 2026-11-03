@@ -1,6 +1,8 @@
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { ArrowRight, ArrowUp, Mail, MapPin, Sparkles, ChevronRight } from 'lucide-react'
 import { navItems } from '../data/header.data'
+import { socialLinks } from '../data/social.data'
+import { SocialIcon } from './SocialIcon'
 
 const focusAreas = [
   { name: 'Healthcare Financial Governance', path: '/expertise' },
@@ -52,7 +54,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-6 py-14 sm:px-8 lg:px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8">
           
-          {/* Brand Profile Column */}
+          {/* Brand Profile & Social Media Column */}
           <div className="lg:col-span-4 flex flex-col gap-5">
             <Link to="/" className="flex items-center gap-3 shrink-0 group w-fit">
               <div className="flex h-11 w-11 items-center justify-center rounded-[14px] bg-[#2C221E] border border-[#4A3B32] text-lg font-extrabold tracking-tight text-[#FDFBF7] shadow-md group-hover:border-[#8C6D58] transition-colors">
@@ -72,7 +74,7 @@ const Footer = () => {
               Co-Founder, CFO and Admin Director at Deda Hospital Ltd. FCCA Fellow bridging global accounting rigor with high-growth healthcare and enterprise leadership.
             </p>
 
-            <div className="flex flex-col gap-2.5 pt-2 text-xs text-[#C2B2A3]">
+            <div className="flex flex-col gap-2.5 text-xs text-[#C2B2A3]">
               <div className="flex items-center gap-2.5">
                 <MapPin className="w-4 h-4 text-[#D9C7B0] shrink-0" />
                 <span>Deda Hospital Ltd, Abuja, Nigeria</span>
@@ -85,6 +87,28 @@ const Footer = () => {
                 <span>Executive Office & Advisory Inquiries</span>
                 <ArrowRight className="w-3 h-3 text-[#D9C7B0] opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
               </Link>
+            </div>
+
+            {/* Social Media Links */}
+            <div className="pt-2">
+              <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#D9C7B0] mb-3">
+                Connect & Follow
+              </p>
+              <div className="flex items-center gap-2.5 flex-wrap">
+                {socialLinks.map((social) => (
+                  <a
+                    key={social.name}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Visit Juliana on ${social.name}`}
+                    title={`${social.name} (${social.handle})`}
+                    className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#221B18] border border-[#382C27] text-[#C2B2A3] transition-all hover:bg-[#8C6D58] hover:text-[#FDFBF7] hover:border-[#D9C7B0] hover:-translate-y-0.5 hover:shadow-md"
+                  >
+                    <SocialIcon name={social.icon} className="w-4 h-4" />
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
 
@@ -195,13 +219,14 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Bottom Bar: Copyright & Attribution */}
+      {/* Bottom Bar: Copyright, Social badges & Attribution */}
       <div className="border-t border-[#2E231F] bg-[#140F0D]">
         <div className="max-w-7xl mx-auto px-6 py-6 sm:px-8 lg:px-12 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#8C6D58]">
           <p>
             &copy; {new Date().getFullYear()} Juliana Ede Onuh, FCCA. All rights reserved.
           </p>
-          <div className="flex items-center gap-6 text-[11px] text-[#A69282]">
+
+          <div className="flex items-center gap-4 text-[11px] text-[#A69282]">
             <span>Stanford Seed Transformation Alumna</span>
             <span>•</span>
             <span>FCCA Fellow</span>

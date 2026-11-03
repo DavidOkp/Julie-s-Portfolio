@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
+import PageLoader from './components/PageLoader'
 
 import About from './pages/About'
 import Expertise from './pages/Expertise'
@@ -13,6 +14,7 @@ import Contact from './pages/Contact'
 function App() {
   return (
     <div className="min-h-screen bg-[#FDFBF7] text-[#2C221E] font-sans flex flex-col justify-between">
+      <PageLoader />
       <ScrollToTop />
       <Navbar />
       
