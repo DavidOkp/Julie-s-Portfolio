@@ -1,41 +1,13 @@
 import React from 'react'
 import { Sparkles, ArrowRight, Calendar, Clock, BookOpen } from 'lucide-react'
+import { blogPosts } from '../data/blog.data'
 
-const blogPosts = [
-  {
-    id: 1,
-    title: 'Navigating Financial Restructuring in Healthcare Enterprises',
-    excerpt: 'How healthcare organizations can optimize capital efficiency, manage cash flows, and build sustainable fiscal resilience during economic shifts.',
-    category: 'Financial Strategy',
-    date: 'Oct 02, 2026',
-    readTime: '6 min read',
-    featured: true,
-  },
-  {
-    id: 2,
-    title: 'Bridging ACCA Audit Rigor with Stanford Growth Frameworks',
-    excerpt: 'Combining traditional accounting governance with modern startup scaling models to unlock institutional stability.',
-    category: 'Governance & Scaling',
-    date: 'Sep 18, 2026',
-    readTime: '8 min read',
-    featured: false,
-  },
-  {
-    id: 3,
-    title: 'Empowering Female Founders: The Path to Capital Readiness',
-    excerpt: 'Key financial metrics and governance practices female executives need to master before seeking venture and institutional backing.',
-    category: 'SME & Advocacy',
-    date: 'Aug 29, 2026',
-    readTime: '5 min read',
-    featured: false,
-  },
-]
 
 const Blog = () => {
   return (
     <div className="py-16 px-6 bg-[#FDFBF7]">
       <div className="max-w-7xl mx-auto">
-        
+
         <div className="max-w-3xl mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#EADFCF]/50 border border-[#D9C7B0] text-[#5C4A3E] text-[11px] font-bold uppercase tracking-widest mb-6">
             <Sparkles className="w-3.5 h-3.5 text-[#8C6D58]" />
