@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { ArrowRight, Menu, X } from 'lucide-react'
-import { navItems } from '../utils/utility'
+import { navItems } from '../data/header.data'
+import { socialLinks } from '../data/social.data'
+import { SocialIcon } from './SocialIcon'
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -27,7 +29,7 @@ const Navbar = () => {
   return (
     <>
       {/* Main Navigation Header */}
-      <nav className="sticky top-0 z-40 border- border-[#EADFCF b-[#FDFBF7]/95 backdrop-blur-md">
+      <nav className="sticky top-0 z-40 border-b border-[#EADFCF] bg-[#FDFBF7]/95 backdrop-blur-md">
         <div className="mx-auto grid h-24 max-w-[1680px] grid-cols-[1fr_auto] items-center px-5 sm:px-8 lg:h-20 lg:grid-cols-[1fr_auto_1fr] lg:px-12">
           
           {/* Brand Logo */}
@@ -148,7 +150,7 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* Drawer Footer CTA */}
+        {/* Drawer Footer CTA & Social Links */}
         <div className="border-t border-[#EADFCF] bg-[#F4EFE6] p-6">
           <Link
             to="/contact"
@@ -157,6 +159,23 @@ const Navbar = () => {
             <span>Book Consultation</span>
             <ArrowRight className="h-4 w-4 text-[#D9C7B0]" />
           </Link>
+
+          <div className="mt-5 flex items-center justify-center gap-2.5">
+            {socialLinks.map((social) => (
+              <a
+                key={social.name}
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Visit Juliana on ${social.name}`}
+                title={social.name}
+                className="flex h-9 w-9 items-center justify-center rounded-xl bg-white border border-[#EADFCF] text-[#5C4A3E] transition-all hover:bg-[#1A1412] hover:text-[#FDFBF7] hover:border-[#1A1412]"
+              >
+                <SocialIcon name={social.icon} className="w-3.5 h-3.5" />
+              </a>
+            ))}
+          </div>
+
           <p className="mt-4 text-center text-[10px] font-semibold uppercase tracking-wider text-[#8C6D58]">
             Co-Founder & CFO @ Deda Hospital Ltd
           </p>
