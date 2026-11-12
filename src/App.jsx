@@ -3,6 +3,7 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
 import PageLoader from './components/PageLoader'
+import GlobalBackgroundLayout from './components/GlobalBackgroundLayout'
 
 import About from './pages/About'
 import Expertise from './pages/Expertise'
@@ -20,13 +21,18 @@ function App() {
       
       <main className="flex-grow">
         <Routes>
-          <Route path="/" element={<About />} />
+          {/* About page - completely excluded from the global background overlay */}
           <Route path="/about" element={<About />} />
-          <Route path="/expertise" element={<Expertise />} />
-          <Route path="/credentials" element={<Credentials />} />
-          <Route path="/impact" element={<Impact />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/contact" element={<Contact />} />
+
+          {/* Shared layout for homepage and all other existing/future pages */}
+          <Route element={<GlobalBackgroundLayout />}>
+            <Route path="/" element={<About />} />
+            <Route path="/expertise" element={<Expertise />} />
+            <Route path="/credentials" element={<Credentials />} />
+            <Route path="/impact" element={<Impact />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/contact" element={<Contact />} />
+          </Route>
         </Routes>
       </main>
 
