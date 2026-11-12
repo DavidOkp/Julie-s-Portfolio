@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react'
+import { useState } from 'react'
 import '@fontsource/poppins/400.css'
 import '@fontsource/poppins/500.css'
 import '@fontsource/poppins/600.css'
@@ -171,12 +171,12 @@ const Insights = () => {
   const renderFeaturedCard = (card) => (
     <article
       key={card.id}
-      className="group grid min-w-0 overflow-hidden rounded-[24px] border border-[#E6D9CA] bg-[#FDFBF7] lg:grid-cols-[1.08fr_0.92fr]"
+      className="group grid min-w-0 overflow-hidden rounded-[24px] border border-[#E6D9CA] bg-[#FDFBF7] lg:grid-cols-[1.08fr_0.92fr] dark:border-white/10 dark:bg-[#191715]"
     >
       {renderCardLink(
         card,
         <>
-          <div className="relative h-full min-h-[280px] overflow-hidden bg-[#E7DCCE] sm:min-h-[360px] lg:min-h-[350px]">
+          <div className="relative h-full min-h-[280px] overflow-hidden bg-[#E7DCCE] sm:min-h-[360px] lg:min-h-[350px] dark:bg-[#211E1B]">
             <img
               src={card.image}
               alt=""
@@ -191,7 +191,7 @@ const Insights = () => {
               <Clock3 size={14} />
               {card.metaText}
             </div>
-            <span className="absolute bottom-4 right-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#FDFBF7] text-[#241B15] shadow-lg transition-colors group-hover:bg-[#A18166] group-hover:text-white">
+            <span className="absolute bottom-4 right-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#FDFBF7] text-[#241B15] shadow-lg transition-colors group-hover:bg-[#A18166] group-hover:text-white dark:bg-[#211E1B] dark:text-[#F5F0E9]">
               {renderActionIcon(card.platform)}
             </span>
           </div>
@@ -201,26 +201,26 @@ const Insights = () => {
 
       <div className="flex flex-col justify-center p-6 sm:p-9 lg:p-10 xl:p-12">
         <div className="mb-6 flex items-center gap-3">
-          <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#8C6D58]">
+          <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#8C6D58] dark:text-[#B18B70]">
             Featured perspective
           </span>
-          <span className="h-px flex-1 bg-[#E4D6C6]" />
-          <span className="font-serif text-sm italic text-[#A18166]">01</span>
+          <span className="h-px flex-1 bg-[#E4D6C6] dark:bg-white/10" />
+          <span className="font-serif text-sm italic text-[#A18166] dark:text-[#B18B70]">01</span>
         </div>
 
-        <div className="mb-4 text-[10px] font-bold uppercase tracking-[0.18em] text-[#9A7B61]">
+        <div className="mb-4 text-[10px] font-bold uppercase tracking-[0.18em] text-[#9A7B61] dark:text-[#B18B70]">
           {card.category}
         </div>
 
-        <h3 className="font-serif text-3xl font-normal leading-[1.15] tracking-[-0.035em] text-[#241B15] sm:text-4xl xl:text-[35px]">
+        <h3 className="font-serif text-3xl font-normal leading-[1.15] tracking-[-0.035em] text-[#241B15] sm:text-4xl xl:text-[35px] dark:text-[#F5F0E9]">
           {card.title}
         </h3>
 
-        <p className="mt-5 max-w-lg text-sm leading-7 text-[#756457] sm:text-base sm:leading-8">
+        <p className="mt-5 max-w-lg text-sm leading-7 text-[#756457] sm:text-base sm:leading-8 dark:text-[#B8ADA1]">
           {card.snippet}
         </p>
 
-        <div className="mt-8 border-t border-[#E9DFD4] pt-5">
+        <div className="mt-8 border-t border-[#E9DFD4] pt-5 dark:border-white/10">
           {renderCardLink(
             card,
             <>
@@ -229,22 +229,22 @@ const Insights = () => {
                 <ArrowUpRight size={18} />
               </span>
             </>,
-            'flex items-center justify-between gap-4 text-sm font-semibold text-[#35271E]',
+            'flex items-center justify-between gap-4 text-sm font-semibold text-[#35271E] dark:text-[#F5F0E9]',
           )}
         </div>
       </div>
     </article>
   )
 
-  const renderSupportingCard = (card, index) => (
+  const renderSupportingCard = (card) => (
     <article
       key={card.id}
-      className="group flex min-w-0 flex-col border-t border-[#DCCDBD] pt-5"
+      className="group flex min-w-0 flex-col border-t border-[#DCCDBD] pt-5 dark:border-white/10"
     >
       {renderCardLink(
         card,
         <>
-          <div className="relative aspect-[1.65/1] overflow-hidden rounded-[16px] bg-[#E7DCCE]">
+          <div className="relative aspect-[1.65/1] overflow-hidden rounded-[16px] bg-[#E7DCCE] dark:bg-[#211E1B]">
             <img
               src={card.image}
               alt=""
@@ -255,7 +255,7 @@ const Insights = () => {
             <div className="absolute left-3 top-3">
               {renderPlatform(card.platform)}
             </div>
-            <span className="absolute bottom-3 right-3 flex h-9 w-9 items-center justify-center rounded-full bg-[#FDFBF7] text-[#241B15] transition-colors group-hover:bg-[#A18166] group-hover:text-white">
+            <span className="absolute bottom-3 right-3 flex h-9 w-9 items-center justify-center rounded-full bg-[#FDFBF7] text-[#241B15] transition-colors group-hover:bg-[#A18166] group-hover:text-white dark:bg-[#211E1B] dark:text-[#F5F0E9]">
               {renderActionIcon(card.platform)}
             </span>
           </div>
@@ -265,21 +265,21 @@ const Insights = () => {
 
       <div className="flex flex-1 flex-col pt-5">
         <div className="mb-3 flex items-center justify-between gap-3">
-          <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#94765E]">
+          <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#94765E] dark:text-[#B18B70]">
             {card.category}
           </span>
-          <span className="text-[10px] text-[#8A7868]">{card.metaText}</span>
+          <span className="text-[10px] text-[#8A7868] dark:text-[#B8ADA1]">{card.metaText}</span>
         </div>
 
-        <h3 className="font-serif text-xl leading-snug tracking-[-0.025em] text-[#241B15] transition-colors group-hover:text-[#8C6D58] sm:text-2xl">
+        <h3 className="font-serif text-xl leading-snug tracking-[-0.025em] text-[#241B15] transition-colors group-hover:text-[#8C6D58] sm:text-2xl dark:text-[#F5F0E9] dark:group-hover:text-[#B18B70]">
           {renderCardLink(card, card.title, 'outline-none focus-visible:underline')}
         </h3>
 
-        <p className="mt-3 flex-1 text-sm leading-6 text-[#756457]">
+        <p className="mt-3 flex-1 text-sm leading-6 text-[#756457] dark:text-[#B8ADA1]">
           {card.snippet}
         </p>
 
-        <div className="mt-5 flex items-center justify-between border-t border-[#E7DCCF] pt-4 text-xs font-semibold text-[#35271E]">
+        <div className="mt-5 flex items-center justify-between border-t border-[#E7DCCF] pt-4 text-xs font-semibold text-[#35271E] dark:border-white/10 dark:text-[#F5F0E9]">
           <span>{card.ctaText}</span>
           <ArrowUpRight
             size={16}
@@ -293,39 +293,39 @@ const Insights = () => {
   return (
     <section
       aria-labelledby="insights-title"
-      className="relative overflow-hidden border-y border-[#EADFCF] bg-[#F7F4EE] py-20 sm:py-24 lg:py-28"
+      className="relative overflow-hidden border-y border-[#EADFCF] bg-[#F7F4EE] py-20 sm:py-24 lg:py-28 dark:border-white/10 dark:bg-[#11100F]"
       style={{ fontFamily: 'Poppins, sans-serif' }}
     >
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-40 -top-40 h-[480px] w-[480px] rounded-full bg-[#D9C7B0]/20 blur-[100px]"
+        className="pointer-events-none absolute -right-40 -top-40 h-[480px] w-[480px] rounded-full bg-[#D9C7B0]/20 blur-[100px] dark:bg-[#B18B70]/[0.08]"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -bottom-40 -left-40 h-[400px] w-[400px] rounded-full bg-[#B8A18B]/15 blur-[100px]"
+        className="pointer-events-none absolute -bottom-40 -left-40 h-[400px] w-[400px] rounded-full bg-[#B8A18B]/15 blur-[100px] dark:bg-[#8C6D58]/[0.08]"
       />
 
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
         <div className="mb-12 grid items-end gap-8 lg:mb-16 lg:grid-cols-[1fr_auto]">
           <div className="max-w-3xl">
-            <div className="mb-5 inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.22em] text-[#8C6D58] sm:text-[11px]">
+            <div className="mb-5 inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.22em] text-[#8C6D58] sm:text-[11px] dark:text-[#B18B70]">
               <Lightbulb size={15} strokeWidth={1.7} />
               <span>Ideas. Perspective. Impact.</span>
-              <span className="ml-1 h-px w-8 bg-[#B9A28E]" />
+              <span className="ml-1 h-px w-8 bg-[#B9A28E] dark:bg-[#B18B70]/50" />
             </div>
 
             <h2
               id="insights-title"
-              className="max-w-3xl text-3xl font-semibold leading-[1.08] tracking-[-0.045em] text-[#201813] sm:text-5xl lg:text-[64px]"
+              className="max-w-3xl text-3xl font-semibold leading-[1.08] tracking-[-0.045em] text-[#201813] sm:text-5xl lg:text-[64px] dark:text-[#F5F0E9]"
             >
               Strategic insights,
               <br />
-              <span className="font-serif font-normal italic text-[#98765D]">
+                <span className="font-serif font-normal italic text-[#98765D] dark:text-[#B18B70]">
                 beyond the boardroom.
               </span>
             </h2>
 
-            <p className="mt-5 max-w-xl text-sm leading-7 text-[#6A5A4D] sm:text-base sm:leading-8">
+            <p className="mt-5 max-w-xl text-sm leading-7 text-[#6A5A4D] sm:text-base sm:leading-8 dark:text-[#B8ADA1]">
               Perspectives on financial leadership, governance, business growth
               and the decisions that shape resilient organisations.
             </p>
@@ -340,7 +340,7 @@ const Insights = () => {
                 rel="noopener noreferrer"
                 aria-label={`Visit ${platform.label}`}
                 title={platform.label}
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-[#E4D8C9] bg-[#FDFBF7] text-[#59483B] transition-all duration-300 hover:-translate-y-1 hover:border-[#8C6D58] hover:bg-[#211913] hover:text-white"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-[#E4D8C9] bg-[#FDFBF7] text-[#59483B] transition-all duration-300 hover:-translate-y-1 hover:border-[#8C6D58] hover:bg-[#211913] hover:text-white dark:border-white/10 dark:bg-[#191715] dark:text-[#B8ADA1] dark:hover:border-[#B18B70]"
               >
                 <BrandIcon icon={platform.icon} size={18} />
               </a>
@@ -348,7 +348,7 @@ const Insights = () => {
           </div>
         </div>
 
-        <div className="mb-10 flex flex-wrap items-center justify-between gap-4 border-y border-[#E3D8CA] py-4">
+        <div className="mb-10 flex flex-wrap items-center justify-between gap-4 border-y border-[#E3D8CA] py-4 dark:border-white/10">
           <div
             className="flex flex-wrap gap-2"
             role="group"
@@ -369,8 +369,8 @@ const Insights = () => {
                   aria-pressed={selected}
                   className={`inline-flex items-center gap-2 rounded-full border px-4 py-2.5 text-xs font-semibold transition-all ${
                     selected
-                      ? 'border-[#241B15] bg-[#241B15] text-white'
-                      : 'border-transparent text-[#746355] hover:border-[#DCCBB9] hover:bg-white/70 hover:text-[#241B15]'
+                      ? 'border-[#241B15] bg-[#241B15] text-white dark:border-[#B18B70] dark:bg-[#B18B70] dark:text-[#11100F]'
+                      : 'border-transparent text-[#746355] hover:border-[#DCCBB9] hover:bg-white/70 hover:text-[#241B15] dark:text-[#B8ADA1] dark:hover:border-white/10 dark:hover:bg-[#191715] dark:hover:text-[#F5F0E9]'
                   }`}
                 >
                   {platform && <BrandIcon icon={platform.icon} size={14} />}
@@ -380,7 +380,7 @@ const Insights = () => {
             })}
           </div>
 
-          <span className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#8A7868]">
+          <span className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#8A7868] dark:text-[#B8ADA1]">
             {String(filteredCards.length).padStart(2, '0')} publications
           </span>
         </div>
@@ -392,11 +392,11 @@ const Insights = () => {
             {supportingCards.length > 0 && (
               <div>
                 <div className="mb-7 flex items-center gap-4">
-                  <h3 className="font-serif text-2xl italic text-[#35271E]">
+                  <h3 className="font-serif text-2xl italic text-[#35271E] dark:text-[#F5F0E9]">
                     More perspectives
                   </h3>
-                  <span className="h-px flex-1 bg-[#DCCDBD]" />
-                  <span className="text-[10px] font-semibold uppercase tracking-[0.15em] text-[#8A7868]">
+                  <span className="h-px flex-1 bg-[#DCCDBD] dark:bg-white/10" />
+                  <span className="text-[10px] font-semibold uppercase tracking-[0.15em] text-[#8A7868] dark:text-[#B8ADA1]">
                     {String(supportingCards.length).padStart(2, '0')} stories
                   </span>
                 </div>
@@ -411,7 +411,7 @@ const Insights = () => {
           </div>
         )}
 
-        <div className="relative mt-16 overflow-hidden rounded-[24px] bg-[#211913] px-6 py-8 text-white sm:px-10 sm:py-10 lg:flex lg:items-center lg:justify-between lg:gap-10">
+        <div className="relative mt-16 overflow-hidden rounded-[24px] bg-[#211913] px-6 py-8 text-white sm:px-10 sm:py-10 lg:flex lg:items-center lg:justify-between lg:gap-10 dark:bg-[#191715] dark:border dark:border-white/10">
           <div
             aria-hidden="true"
             className="pointer-events-none absolute -right-16 -top-36 h-72 w-72 rounded-full border border-white/[0.07]"
@@ -422,19 +422,19 @@ const Insights = () => {
           />
 
           <div className="relative max-w-2xl">
-            <div className="mb-3 flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-[#C8AD93]">
+            <div className="mb-3 flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-[#C8AD93] dark:text-[#B18B70]">
               <Lightbulb size={14} />
               Stay connected
             </div>
 
             <h3 className="text-2xl font-medium tracking-[-0.035em] sm:text-3xl">
               Insight that moves
-              <span className="font-serif italic text-[#C8AD93]">
+              <span className="font-serif italic text-[#C8AD93] dark:text-[#B18B70]">
                 {' '}business forward.
               </span>
             </h3>
 
-            <p className="mt-3 max-w-lg text-sm leading-6 text-[#D0C3B7]">
+            <p className="mt-3 max-w-lg text-sm leading-6 text-[#D0C3B7] dark:text-[#B8ADA1]">
               Follow the conversation for fresh perspectives on finance,
               leadership and sustainable enterprise growth.
             </p>

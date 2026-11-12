@@ -3,20 +3,20 @@ import { socialLinks } from '../data/social.data'
 import { SocialIcon } from '../components/SocialIcon'
 const Contact = () => {
   return (
-    <div className='py-12 px-6 bg-[#F5EFE6] min-h-[calc(100vh-80px)]'>
+    <div className='py-12 px-6 bg-[#F5EFE6] min-h-[calc(100vh-80px)] dark:bg-[#11100F]'>
       <div className="max-w-7xl mx-auto ">
         <div className="max-w-3xl mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#EADFCF]/80 border border-[#D9C7B0] text-[#5C4A3E] text-[11px] font-bold tracking-widest mb-6">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#EADFCF]/80 border border-[#D9C7B0] text-[#5C4A3E] text-[11px] font-bold tracking-widest mb-6 dark:border-white/10 dark:bg-[#211E1B] dark:text-[#B8ADA1]">
             <Lightbulb className='w-3.5 h-3.5' />
             <span>EXECUTIVE MANAGEMENT</span>
           </div>
-          <h1 className=" text-4xl sm:text-6xl font-extrabold text-[#1A1412] tracking-tight mb-6">Schedule a Strategic <span className="font-light italic text-[#8C6D58] sm:text-6xl">Consultation</span></h1>
-          <p className="text-[#5C4A3E] text-lg leading-relaxed">Reach out for executive board advisory, financial restructuring audits, healthcare management consulting, or mentorship opportunities.</p>
+          <h1 className=" text-4xl sm:text-6xl font-extrabold text-[#1A1412] tracking-tight mb-6 dark:text-[#F5F0E9]">Schedule a Strategic <span className="font-light italic text-[#8C6D58] sm:text-6xl dark:text-[#B18B70]">Consultation</span></h1>
+          <p className="text-[#5C4A3E] text-lg leading-relaxed dark:text-[#B8ADA1]">Reach out for executive board advisory, financial restructuring audits, healthcare management consulting, or mentorship opportunities.</p>
         </div>
 
 
         <div className="flex flex-col lg:flex-row gap-12">
-          <div className="lg:w-[520px] min-h-[510px] p-8 sm:p-12 rounded-3xl bg-[#1A1412] text-[#FDFBF7] flex flex-col justify-between border border-[#382C27] shadow-xl">
+          <div className="lg:w-[520px] min-h-[510px] p-8 sm:p-12 rounded-3xl bg-[#1A1412] text-[#FDFBF7] flex flex-col justify-between border border-[#382C27] shadow-xl dark:bg-[#191715] dark:border-white/10">
             <div className="max-w-2xl mt-2">
               <span className="text-[12px] font-bold uppercase tracking-widest text-[#D9C7B0] block mb-2">
                 DIRECT OFFICE AND CORPORATE INFO
@@ -88,33 +88,33 @@ const Contact = () => {
           </div>
 
 
-          <div className="sm:w-[650px] sm:h-[560px] pt-0 p-10 rounded-3xl bg-[#fcf6eb] text-black flex flex-col border border-[#382C27]/10 shadow-lg">
+          <div className="sm:w-[650px] sm:h-[560px] pt-0 p-10 rounded-3xl bg-[#fcf6eb] text-black flex flex-col border border-[#382C27]/10 shadow-lg dark:bg-[#191715] dark:text-[#F5F0E9] dark:border-white/10">
             <div className="max-w-2xl flex sm:flex-row flex-col gap-6 mt-12">
               <div className="max-w-2xl">
-                <span className="text-[12px] font-bold uppercase tracking-widest text-[#634c3c] block mb-2">
+                <span className="text-[12px] font-bold uppercase tracking-widest text-[#634c3c] block mb-2 dark:text-[#B18B70]">
                   FULL NAME *
                 </span>
                 <form className="sm:w-68 ">
-                  <input type="text" placeholder="e.g. Dr. Alex Morgan" className="w-full p-3 rounded-2xl border border-[#D9C7B0] focus:outline-none focus:ring-2 focus:ring-[#8C6D58] bg-white" />
+                  <input type="text" placeholder="e.g. Dr. Alex Morgan" className="w-full p-3 rounded-2xl border border-[#D9C7B0] focus:outline-none focus:ring-2 focus:ring-[#8C6D58] bg-white dark:border-white/10 dark:bg-[#211E1B] dark:text-[#F5F0E9] dark:placeholder:text-[#8F8479] dark:focus:ring-[#B18B70]" />
                 </form>
               </div>
 
               <div className="max-w-2xl">
-                <span className="text-[12px] font-bold uppercase tracking-widest text-[#634c3c] block mb-2">
+                <span className="text-[12px] font-bold uppercase tracking-widest text-[#634c3c] block mb-2 dark:text-[#B18B70]">
                   EMAIL ADDRESS *
                 </span>
                 <form className="sm:w-70">
-                  <input type="text" placeholder="e.g. alex@company.com" className="w-full p-3 rounded-2xl border border-[#D9C7B0] focus:outline-none focus:ring-2 focus:ring-[#8C6D58] bg-white" />
+                  <input type="text" placeholder="e.g. alex@company.com" className="w-full p-3 rounded-2xl border border-[#D9C7B0] focus:outline-none focus:ring-2 focus:ring-[#8C6D58] bg-white dark:border-white/10 dark:bg-[#211E1B] dark:text-[#F5F0E9] dark:placeholder:text-[#8F8479] dark:focus:ring-[#B18B70]" />
                 </form>
               </div>
             </div>
 
             <div className="max-w-2xl mt-8 pr-10">
-              <span className="text-[12px] font-bold uppercase tracking-widest text-[#634c3c] block mb-2">
+              <span className="text-[12px] font-bold uppercase tracking-widest text-[#634c3c] block mb-2 dark:text-[#B18B70]">
                 INQUIRY TYPE
               </span>
               <form className="sm:w-[578px] w-66">
-                <select className="py-4 w-full p-3 rounded-2xl border border-[#D9C7B0] focus:outline-none focus:ring-2 focus:ring-[#8C6D58] bg-white">
+                <select className="py-4 w-full p-3 rounded-2xl border border-[#D9C7B0] focus:outline-none focus:ring-2 focus:ring-[#8C6D58] bg-white dark:border-white/10 dark:bg-[#211E1B] dark:text-[#F5F0E9] dark:focus:ring-[#B18B70]">
                   <option>Strategic Financial Consultation</option>
                   <option></option>
                   <option></option>
@@ -123,16 +123,16 @@ const Contact = () => {
             </div>
 
             <div className="max-w-2xl mt-8 pr-10">
-              <span className="text-[12px] font-bold uppercase tracking-widest text-[#634c3c] block mb-2">
+              <span className="text-[12px] font-bold uppercase tracking-widest text-[#634c3c] block mb-2 dark:text-[#B18B70]">
                 MESSAGE / BUSINESS CONTEXT *
               </span>
               <form className="sm:w-[578px] w-66">
-                <textarea className="w-full sm:h-[130px] h-[147px] p-4 text-sm rounded-lg border border-[#D9C7B0] focus:outline-none focus:ring-2 focus:ring-[#8C6D58] bg-white" rows="4" placeholder="Briefly describe your organization or the scope of consultation..."></textarea>
+                <textarea className="w-full sm:h-[130px] h-[147px] p-4 text-sm rounded-lg border border-[#D9C7B0] focus:outline-none focus:ring-2 focus:ring-[#8C6D58] bg-white dark:border-white/10 dark:bg-[#211E1B] dark:text-[#F5F0E9] dark:placeholder:text-[#8F8479] dark:focus:ring-[#B18B70]" rows="4" placeholder="Briefly describe your organization or the scope of consultation..."></textarea>
               </form>
             </div>
 
             <div>
-              <button className="sm:w-[578px] text-sm mt-8 px-6 sm:py-4 py-3 rounded-lg bg-black text-white font-bold hover:bg-[#634c3c] transition duration-300 flex justify-center items-center">
+              <button className="sm:w-[578px] text-sm mt-8 px-6 sm:py-4 py-3 rounded-lg bg-black text-white font-bold hover:bg-[#634c3c] transition duration-300 flex justify-center items-center dark:bg-[#B18B70] dark:text-[#11100F] dark:hover:bg-[#C09A7F]">
                 SUBMIT CONSULTATION REQUEST
                 <Send className='w-4 h-4 ml-2' />
               </button>

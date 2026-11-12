@@ -104,18 +104,18 @@ const About = () => {
   const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + carouselImages.length) % carouselImages.length)
 
   return (
-    <div className="bg-[#FDFBF7] text-[#1A1412]">
+    <div className="bg-[#FDFBF7] text-[#1A1412] dark:bg-[#11100F] dark:text-[#F5F0E9]">
       <section
         aria-labelledby="about-hero-title"
-        className="relative isolate flex min-h-[100dvh] lg:min-h-[820px] items-center overflow-hidden bg-[#FDFBF7]"
+        className="relative isolate flex min-h-[100dvh] lg:min-h-[820px] items-center overflow-hidden bg-[#FDFBF7] dark:bg-[#11100F]"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
       >
-        <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_18%_45%,#fffefa_0%,#FDFBF7_58%,#F4EFE6_100%)]" />
+        <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_18%_45%,#fffefa_0%,#FDFBF7_58%,#F4EFE6_100%)] dark:bg-[radial-gradient(ellipse_at_18%_45%,#1c1917_0%,#11100F_58%,#161412_100%)]" />
 
         {/* Micro-grid overlay */}
         <div
-          className="absolute inset-0 z-0 opacity-[0.035] pointer-events-none mix-blend-multiply"
+          className="absolute inset-0 z-0 opacity-[0.035] pointer-events-none mix-blend-multiply dark:opacity-[0.03] dark:mix-blend-screen"
           style={{
             backgroundImage: `linear-gradient(#1A1412 1px, transparent 1px), linear-gradient(to right, #1A1412 1px, transparent 1px)`,
             backgroundSize: '48px 48px'
@@ -123,16 +123,16 @@ const About = () => {
         />
 
         {/* Ethereal ambient light spheres */}
-        <div className="absolute -top-24 -left-24 z-0 h-[360px] sm:h-[520px] w-[360px] sm:w-[520px] rounded-full bg-[#D9C7B0]/25 blur-[100px] sm:blur-[120px] pointer-events-none" />
-        <div className="absolute -bottom-32 right-1/3 z-0 h-[360px] sm:h-[480px] w-[360px] sm:w-[480px] rounded-full bg-[#8C6D58]/12 blur-[100px] sm:blur-[140px] pointer-events-none" />
-        <div className="hidden sm:block absolute -top-32 right-[-5%] z-0 h-[680px] w-[680px] rounded-full border border-[#8C6D58]/10 pointer-events-none shadow-[0_0_80px_rgba(140,109,88,0.03)]" />
+        <div className="absolute -top-24 -left-24 z-0 h-[360px] sm:h-[520px] w-[360px] sm:w-[520px] rounded-full bg-[#D9C7B0]/25 dark:bg-[#B18B70]/10 blur-[100px] sm:blur-[120px] pointer-events-none" />
+        <div className="absolute -bottom-32 right-1/3 z-0 h-[360px] sm:h-[480px] w-[360px] sm:w-[480px] rounded-full bg-[#8C6D58]/12 dark:bg-[#8C6D58]/10 blur-[100px] sm:blur-[140px] pointer-events-none" />
+        <div className="hidden sm:block absolute -top-32 right-[-5%] z-0 h-[680px] w-[680px] rounded-full border border-[#8C6D58]/10 dark:border-[#B18B70]/10 pointer-events-none shadow-[0_0_80px_rgba(140,109,88,0.03)]" />
 
         {/* Dynamic Watermark that changes per slide (Hidden on mobile to preserve visual cleanliness) */}
-        <div className="hidden md:block absolute left-6 top-1/2 z-0 -translate-y-1/2 select-none pointer-events-none font-serif text-[12vw] font-bold tracking-tighter text-[#1A1412] whitespace-nowrap overflow-hidden">
+        <div className="hidden md:block absolute left-6 top-1/2 z-0 -translate-y-1/2 select-none pointer-events-none font-serif text-[12vw] font-bold tracking-tighter text-[#1A1412] dark:text-[#F5F0E9] whitespace-nowrap overflow-hidden">
           {heroSlides.map((slide, index) => (
             <span
               key={slide.id}
-              className={`block transition-all duration-1000 ease-in-out ${index === heroSlide ? 'opacity-[0.03] scale-100' : 'opacity-0 scale-95 pointer-events-none hidden'
+              className={`block transition-all duration-1000 ease-in-out ${index === heroSlide ? 'opacity-[0.03] dark:opacity-[0.04] scale-100' : 'opacity-0 scale-95 pointer-events-none hidden'
                 }`}
             >
               {slide.watermark}
@@ -157,15 +157,15 @@ const About = () => {
                       }`}
                   >
                     {/* Eyebrow / Tag */}
-                    <div className="mb-3.5 sm:mb-6 inline-flex flex-wrap items-center gap-1.5 sm:gap-2 rounded-full border border-[#D9C7B0]/80 bg-[#FDFBF7]/90 px-2.5 sm:px-4 py-1 sm:py-2 text-[8.5px] sm:text-[11px] font-bold uppercase tracking-[0.08em] sm:tracking-[0.14em] text-[#5C4A3E] shadow-[0_8px_24px_rgba(26,20,18,0.04)] backdrop-blur-sm">
-                      <Lightbulb className="h-2.5 w-2.5 sm:h-3.5 sm:w-3.5 text-[#8C6D58]" />
+                    <div className="mb-3.5 sm:mb-6 inline-flex flex-wrap items-center gap-1.5 sm:gap-2 rounded-full border border-[#D9C7B0]/80 bg-[#FDFBF7]/90 px-2.5 sm:px-4 py-1 sm:py-2 text-[8.5px] sm:text-[11px] font-bold uppercase tracking-[0.08em] sm:tracking-[0.14em] text-[#5C4A3E] shadow-[0_8px_24px_rgba(26,20,18,0.04)] backdrop-blur-sm dark:border-white/10 dark:bg-[#191715]/90 dark:text-[#B8ADA1] dark:shadow-none">
+                      <Lightbulb className="h-2.5 w-2.5 sm:h-3.5 sm:w-3.5 text-[#8C6D58] dark:text-[#B18B70]" />
                       <span>{slide.tag}</span>
-                      <span className="hidden sm:inline text-[#8C6D58]/60">•</span>
-                      <span className="hidden sm:inline text-[#8C6D58] font-semibold">{slide.badge}</span>
+                      <span className="hidden sm:inline text-[#8C6D58]/60 dark:text-[#B18B70]/60">•</span>
+                      <span className="hidden sm:inline text-[#8C6D58] dark:text-[#B18B70] font-semibold">{slide.badge}</span>
                     </div>
 
                     {/* Headline */}
-                    <h1 id={isActive ? "about-hero-title" : undefined} className="mb-4 sm:mb-6 max-w-[15ch] text-3xl sm:text-5xl lg:text-[4.2rem] xl:text-[4.5rem] font-extrabold leading-[1.12] sm:leading-[1.04] text-[#1A1412]">
+                    <h1 id={isActive ? "about-hero-title" : undefined} className="mb-4 sm:mb-6 max-w-[15ch] text-3xl sm:text-5xl lg:text-[4.2rem] xl:text-[4.5rem] font-extrabold leading-[1.12] sm:leading-[1.04] text-[#1A1412] dark:text-[#F5F0E9]">
                       <TypewriterHeadline
                         titleStart={slide.titleStart}
                         titleHighlight={slide.titleHighlight}
@@ -177,12 +177,12 @@ const About = () => {
                     </h1>
 
                     <div
-                      className="lg:hidden relative w-full my-6 overflow-hidden rounded-3xl border border-[#EADFCF] bg-gradient-to-b from-[#F4EFE6] to-[#EADFCF]/40 p-2 shadow-xl"
+                      className="lg:hidden relative w-full my-6 overflow-hidden rounded-3xl border border-[#EADFCF] bg-gradient-to-b from-[#F4EFE6] to-[#EADFCF]/40 p-2 shadow-xl dark:border-white/10 dark:from-[#191715] dark:to-[#161412] dark:shadow-[0_8px_30px_rgba(0,0,0,0.5)]"
                       onTouchStart={handleTouchStart}
                       onTouchMove={handleTouchMove}
                       onTouchEnd={handleTouchEnd}
                     >
-                      <div className="relative h-[340px] sm:h-[420px] w-full overflow-hidden rounded-2xl bg-[#EADFCF]/30">
+                      <div className="relative h-[340px] sm:h-[420px] w-full overflow-hidden rounded-2xl bg-[#EADFCF]/30 dark:bg-[#211E1B]/50">
                         <img
                           src={slide.image}
                           alt={slide.tag}
@@ -216,7 +216,7 @@ const About = () => {
                         </div>
 
                         {/* Floating Executive Pill on Mobile Photo */}
-                        <div className="absolute bottom-3 left-3 right-3 z-20 flex items-center justify-between rounded-xl border border-[#382C27]/50 bg-[#1A1412]/90 p-3 text-[#FDFBF7] shadow-lg backdrop-blur-md">
+                        <div className="absolute bottom-3 left-3 right-3 z-20 flex items-center justify-between rounded-xl border border-[#382C27]/50 bg-[#1A1412]/90 p-3 text-[#FDFBF7] shadow-lg backdrop-blur-md dark:border-white/10 dark:bg-[#211E1B]/95">
                           <div className="flex items-center gap-2.5">
                             <div className="flex h-7 w-7 items-center justify-center rounded-lg border border-[#524138] bg-[#2A1E17] text-[#D9C7B0]">
                               <Award className="h-4 w-4" />
@@ -237,12 +237,12 @@ const About = () => {
                     </div>
 
                     {/* Narrative Description */}
-                    <p className="max-w-2xl text-sm sm:text-base font-normal leading-relaxed sm:leading-8 text-[#5C4A3E] mb-3 sm:mb-4">
+                    <p className="max-w-2xl text-sm sm:text-base font-normal leading-relaxed sm:leading-8 text-[#5C4A3E] mb-3 sm:mb-4 dark:text-[#B8ADA1]">
                       {slide.description}
                     </p>
 
                     {/* Italic Accent Quote */}
-                    <p className="text-xs sm:text-sm font-serif italic text-[#8C6D58] mb-6 sm:mb-8 font-normal">
+                    <p className="text-xs sm:text-sm font-serif italic text-[#8C6D58] mb-6 sm:mb-8 font-normal dark:text-[#B18B70]">
                       &ldquo;{slide.accentQuote}&rdquo;
                     </p>
 
@@ -250,18 +250,18 @@ const About = () => {
                     <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-6">
                       <Link
                         to={slide.ctaLink}
-                        className="group inline-flex items-center justify-between sm:justify-center gap-3 rounded-2xl border border-[#382C27] bg-[#1A1412] px-6 py-3.5 sm:py-4 text-xs font-bold uppercase tracking-wider text-[#FDFBF7] shadow-xl transition-all duration-300 hover:bg-[#2C221E] hover:border-[#8C6D58]/60 hover:shadow-2xl active:scale-[0.98]"
+                        className="group inline-flex items-center justify-between sm:justify-center gap-3 rounded-2xl border border-[#382C27] bg-[#1A1412] px-6 py-3.5 sm:py-4 text-xs font-bold uppercase tracking-wider text-[#FDFBF7] shadow-xl transition-all duration-300 hover:bg-[#2C221E] hover:border-[#8C6D58]/60 hover:shadow-2xl active:scale-[0.98] dark:border-white/15 dark:bg-[#F5F0E9] dark:text-[#11100F] dark:hover:bg-[#EADFCF] dark:shadow-[0_8px_25px_rgba(0,0,0,0.4)]"
                       >
                         <span>{slide.ctaText}</span>
-                        <span className="flex h-6 w-6 items-center justify-center rounded-lg bg-[#382C27] text-[#D9C7B0] transition-transform duration-300 group-hover:translate-x-1 group-hover:bg-[#8C6D58] group-hover:text-white">
+                        <span className="flex h-6 w-6 items-center justify-center rounded-lg bg-[#382C27] text-[#D9C7B0] transition-transform duration-300 group-hover:translate-x-1 group-hover:bg-[#8C6D58] group-hover:text-white dark:bg-[#EADFCF] dark:text-[#11100F] group-hover:dark:bg-[#8C6D58] group-hover:dark:text-white">
                           <ArrowRight className="h-3.5 w-3.5" />
                         </span>
                       </Link>
 
-                      <div className="flex items-center gap-3 px-3 py-2.5 sm:py-0 sm:px-0 sm:pl-5 sm:border-l border-[#D9C7B0]/80 bg-[#F4EFE6]/60 sm:bg-transparent rounded-xl sm:rounded-none">
+                      <div className="flex items-center gap-3 px-3 py-2.5 sm:py-0 sm:px-0 sm:pl-5 sm:border-l border-[#D9C7B0]/80 bg-[#F4EFE6]/60 sm:bg-transparent rounded-xl sm:rounded-none dark:border-white/10 dark:bg-[#191715]/60 sm:dark:bg-transparent">
                         <div>
-                          <p className="text-lg sm:text-xl font-extrabold text-[#1A1412] leading-none">{slide.metric}</p>
-                          <p className="text-[10px] font-bold uppercase tracking-widest text-[#8C6D58] mt-1">{slide.metricLabel}</p>
+                          <p className="text-lg sm:xl font-extrabold text-[#1A1412] leading-none dark:text-[#F5F0E9]">{slide.metric}</p>
+                          <p className="text-[10px] font-bold uppercase tracking-widest text-[#8C6D58] mt-1 dark:text-[#B18B70]">{slide.metricLabel}</p>
                         </div>
                       </div>
                     </div>
@@ -271,7 +271,7 @@ const About = () => {
             </div>
 
             {/* Editorial Timeline & Progress Controls (Fully Responsive for Mobile) */}
-            <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-[#EADFCF]/80 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5 sm:gap-6">
+            <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-[#EADFCF]/80 dark:border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5 sm:gap-6">
 
               {/* Slide Tabs with Animated Progress Line */}
               <div className="grid grid-cols-3 gap-2 sm:flex sm:items-center sm:gap-6 w-full sm:w-auto">
@@ -289,11 +289,11 @@ const About = () => {
                       aria-label={`Jump to slide ${index + 1}`}
                     >
                       <div className="flex items-center gap-1.5 sm:gap-2 mb-1.5 sm:mb-2">
-                        <span className={`text-[10px] font-mono font-bold tracking-widest transition-colors ${isActive ? 'text-[#1A1412]' : 'text-[#8C6D58]/60 group-hover:text-[#8C6D58]'
+                        <span className={`text-[10px] font-mono font-bold tracking-widest transition-colors ${isActive ? 'text-[#1A1412] dark:text-[#F5F0E9]' : 'text-[#8C6D58]/60 dark:text-[#B8ADA1]/60 group-hover:text-[#8C6D58] group-hover:dark:text-[#B18B70]'
                           }`}>
                           0{index + 1}
                         </span>
-                        <span className={`text-[11px] sm:text-xs font-semibold tracking-wide transition-colors truncate ${isActive ? 'text-[#1A1412]' : 'text-[#8C6D58]/60 group-hover:text-[#8C6D58]'
+                        <span className={`text-[11px] sm:text-xs font-semibold tracking-wide transition-colors truncate ${isActive ? 'text-[#1A1412] dark:text-[#F5F0E9]' : 'text-[#8C6D58]/60 dark:text-[#B8ADA1]/60 group-hover:text-[#8C6D58] group-hover:dark:text-[#B18B70]'
                           }`}>
                           <span className="sm:hidden">{index === 0 ? 'Scale' : index === 1 ? 'Rigor' : 'Counsel'}</span>
                           <span className="hidden sm:inline">{index === 0 ? 'Scale & Clarity' : index === 1 ? 'Capital Rigor' : 'Board Counsel'}</span>
@@ -301,9 +301,9 @@ const About = () => {
                       </div>
 
                       {/* Animated Progress Bar */}
-                      <div className="h-1 w-full sm:w-28 md:w-36 rounded-full bg-[#EADFCF] overflow-hidden">
+                      <div className="h-1 w-full sm:w-28 md:w-36 rounded-full bg-[#EADFCF] dark:bg-[#211E1B] overflow-hidden">
                         <div
-                          className={`h-full bg-[#8C6D58] rounded-full transition-all ${isActive ? 'duration-100 ease-linear' : 'duration-300 w-0'
+                          className={`h-full bg-[#8C6D58] dark:bg-[#B18B70] rounded-full transition-all ${isActive ? 'duration-100 ease-linear' : 'duration-300 w-0'
                             }`}
                           style={{ width: isActive ? `${progress}%` : '0%' }}
                         />
@@ -314,16 +314,16 @@ const About = () => {
               </div>
 
               {/* Prev / Pause / Next Controls */}
-              <div className="flex items-center justify-between sm:justify-end gap-2.5 w-full sm:w-auto pt-3 sm:pt-0 border-t sm:border-t-0 border-[#EADFCF]/60">
-                <span className="text-[11px] font-mono tracking-widest text-[#8C6D58] mr-1 sm:mr-2">
-                  <strong className="text-[#1A1412]">0{heroSlide + 1}</strong> / 0{heroSlides.length}
+              <div className="flex items-center justify-between sm:justify-end gap-2.5 w-full sm:w-auto pt-3 sm:pt-0 border-t sm:border-t-0 border-[#EADFCF]/60 dark:border-white/10">
+                <span className="text-[11px] font-mono tracking-widest text-[#8C6D58] dark:text-[#B18B70] mr-1 sm:mr-2">
+                  <strong className="text-[#1A1412] dark:text-[#F5F0E9]">0{heroSlide + 1}</strong> / 0{heroSlides.length}
                 </span>
 
                 <div className="flex items-center gap-2">
                   <button
                     onClick={() => setIsPaused((prev) => !prev)}
                     title={isPaused ? "Resume auto-play" : "Pause auto-play"}
-                    className="flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-full border border-[#D9C7B0] bg-[#FDFBF7] text-[#5C4A3E] shadow-sm transition-all hover:bg-[#F4EFE6] hover:text-[#1A1412] active:scale-95"
+                    className="flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-full border border-[#D9C7B0] bg-[#FDFBF7] text-[#5C4A3E] shadow-sm transition-all hover:bg-[#F4EFE6] hover:text-[#1A1412] active:scale-95 dark:border-white/10 dark:bg-[#191715] dark:text-[#B8ADA1] hover:dark:bg-[#211E1B] hover:dark:text-[#F5F0E9]"
                   >
                     {isPaused ? <Play className="h-3 w-3 sm:h-3.5 sm:w-3.5 fill-current" /> : <Pause className="h-3 w-3 sm:h-3.5 sm:w-3.5" />}
                   </button>
@@ -331,7 +331,7 @@ const About = () => {
                   <button
                     onClick={prevHeroSlide}
                     aria-label="Previous slide"
-                    className="flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-full border border-[#D9C7B0] bg-[#FDFBF7] text-[#5C4A3E] shadow-sm transition-all hover:bg-[#F4EFE6] hover:text-[#1A1412] active:scale-95"
+                    className="flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-full border border-[#D9C7B0] bg-[#FDFBF7] text-[#5C4A3E] shadow-sm transition-all hover:bg-[#F4EFE6] hover:text-[#1A1412] active:scale-95 dark:border-white/10 dark:bg-[#191715] dark:text-[#B8ADA1] hover:dark:bg-[#211E1B] hover:dark:text-[#F5F0E9]"
                   >
                     <ChevronLeft className="h-4 w-4" />
                   </button>
@@ -339,7 +339,7 @@ const About = () => {
                   <button
                     onClick={nextHeroSlide}
                     aria-label="Next slide"
-                    className="flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-full border border-[#D9C7B0] bg-[#FDFBF7] text-[#5C4A3E] shadow-sm transition-all hover:bg-[#F4EFE6] hover:text-[#1A1412] active:scale-95"
+                    className="flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-full border border-[#D9C7B0] bg-[#FDFBF7] text-[#5C4A3E] shadow-sm transition-all hover:bg-[#F4EFE6] hover:text-[#1A1412] active:scale-95 dark:border-white/10 dark:bg-[#191715] dark:text-[#B8ADA1] hover:dark:bg-[#211E1B] hover:dark:text-[#F5F0E9]"
                   >
                     <ChevronRight className="h-4 w-4" />
                   </button>
@@ -378,10 +378,10 @@ const About = () => {
         </div>
 
         {/* Floating Executive Tag on Bottom Right of the Hero on Desktop */}
-        <div className="pointer-events-none absolute bottom-8 right-8 z-20 hidden xl:flex items-center gap-3 rounded-2xl border border-[#382C27]/40 bg-[#1A1412]/80 px-4 py-2.5 text-[#FDFBF7] shadow-xl backdrop-blur-md">
+        <div className="pointer-events-none absolute bottom-8 right-8 z-20 hidden xl:flex items-center gap-3 rounded-2xl border border-[#382C27]/40 bg-[#1A1412]/80 px-4 py-2.5 text-[#FDFBF7] shadow-xl backdrop-blur-md dark:border-white/10 dark:bg-[#191715]/90 dark:text-[#F5F0E9]">
           <span className="h-2 w-2 rounded-full bg-emerald-400" />
           <p className="text-[11px] font-semibold tracking-wide">
-            {heroSlides[heroSlide].badgePill} • <span className="text-[#D9C7B0]">Juliana Ede Onuh</span>
+            {heroSlides[heroSlide].badgePill} • <span className="text-[#D9C7B0] dark:text-[#B18B70]">Juliana Ede Onuh</span>
           </p>
         </div>
       </section>
@@ -392,12 +392,12 @@ const About = () => {
 
       <section
         aria-labelledby="vision-title"
-        className="mx-auto max-auto px-6 py-20 sm:px-10 sm:pb-24 lg:px-40 bg-[radial-gradient(ellipse_at_18%_45%,#fffefa_0%,#FDFBF7_58%,#F4EFE6_100%)]"
+        className="mx-auto max-auto px-6 py-20 sm:px-10 sm:pb-24 lg:px-40 bg-[radial-gradient(ellipse_at_18%_45%,#fffefa_0%,#FDFBF7_58%,#F4EFE6_100%)] dark:bg-[radial-gradient(ellipse_at_18%_45%,#1c1917_0%,#11100F_58%,#161412_100%)]"
       >
         <div className="grid grid-cols-1 items-stretch gap-10 lg:grid-cols-12">
 
           <div className="group relative lg:col-span-7">
-            <div className="relative h-full min-h-[540px] overflow-hidden rounded-3xl border border-[#EADFCF] bg-[#F4EFE6] p-2 shadow-xl">
+            <div className="relative h-full min-h-[540px] overflow-hidden rounded-3xl border border-[#EADFCF] bg-[#F4EFE6] p-2 shadow-xl dark:border-white/10 dark:bg-[#191715]">
 
               <div className="relative h-full min-h-[520px] w-full overflow-hidden rounded-2xl">
                 {carouselImages.map((image, index) => {
@@ -453,7 +453,7 @@ const About = () => {
 
                 {/* Floating Profile Badge */}
                 <div className="absolute bottom-6 left-6 right-6 z-20 flex items-center justify-between rounded-2xl border border-[#382C27]/60 bg-[#1A1412]/85 p-4 text-[#FDFBF7]
-                  shadow-2xl backdrop-blur-md">
+                  shadow-2xl backdrop-blur-md dark:border-white/10 dark:bg-[#191715]/90">
                   <div>
                     <p className="text-[10px] font-extrabold uppercase tracking-widest text-[#D9C7B0]">Executive Profile</p>
                     <p className="text-sm font-semibold text-[#FDFBF7]">Juliana Ede Onuh • FCCA</p>
@@ -468,7 +468,7 @@ const About = () => {
           {/* RIGHT COLUMN */}
           <div className="flex flex-col justify-between gap-6 lg:col-span-5">
             <div className="group relative flex h-full flex-col justify-between overflow-hidden rounded-3xl border border-[#42342E]/70 bg-gradient-to-br from-[#1A1412] via-[#2A1E17]
-              to-[#120D0B] p-8 text-[#FDFBF7] shadow-2xl sm:p-10">
+              to-[#120D0B] p-8 text-[#FDFBF7] shadow-2xl sm:p-10 dark:border-white/10 dark:from-[#1E1916] dark:via-[#161210] dark:to-[#0D0B0A]">
               <div className="pointer-events-none absolute -right-24 -top-24 h-60 w-60 rounded-full bg-[#8C6D58]/25 blur-3xl transition-all duration-700 group-hover:bg-[#8C6D58]/35" />
               <div className="pointer-events-none absolute -bottom-24 -left-24 h-60 w-60 rounded-full bg-[#D9C7B0]/10 blur-3xl" />
 
@@ -492,7 +492,7 @@ const About = () => {
               <Link
                 to="/contact"
                 className="relative z-10 inline-flex w-full items-center justify-between rounded-2xl border border-[#4A3B34] bg-[#2C221E]/90 p-4 text-xs font-bold uppercase
-                  tracking-wider text-[#FDFBF7] shadow-md transition-all hover:bg-[#382C27] group-hover:border-[#8C6D58]/60"
+                  tracking-wider text-[#FDFBF7] shadow-md transition-all hover:bg-[#382C27] group-hover:border-[#8C6D58]/60 dark:border-white/15 dark:bg-[#2A2420] dark:hover:bg-[#382C27]"
               >
                 <span>Schedule Strategic Audit</span>
                 <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#382C27] text-[#D9C7B0] transition-colors group-hover:bg-[#8C6D58] group-hover:text-[#FDFBF7]">
@@ -501,13 +501,13 @@ const About = () => {
               </Link>
             </div>
 
-            <div className="flex items-center justify-between rounded-2xl border border-[#EADFCF] bg-[#F4EFE6] p-6 shadow-sm transition-all hover:border-[#8C6D58]/40">
+            <div className="flex items-center justify-between rounded-2xl border border-[#EADFCF] bg-[#F4EFE6] p-6 shadow-sm transition-all hover:border-[#8C6D58]/40 dark:border-white/10 dark:bg-[#191715] hover:dark:border-[#B18B70]/40">
               <div>
-                <p className="text-2xl font-extrabold text-[#1A1412]">14+ Years</p>
-                <p className="text-xs font-bold uppercase tracking-wider text-[#8C6D58]">ACCA Fellow Credential</p>
+                <p className="text-2xl font-extrabold text-[#1A1412] dark:text-[#F5F0E9]">14+ Years</p>
+                <p className="text-xs font-bold uppercase tracking-wider text-[#8C6D58] dark:text-[#B18B70]">ACCA Fellow Credential</p>
               </div>
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-[#D9C7B0] bg-[#EADFCF]/60">
-                <Award className="h-6 w-6 text-[#8C6D58]" />
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-[#D9C7B0] bg-[#EADFCF]/60 dark:border-white/10 dark:bg-[#211E1B]">
+                <Award className="h-6 w-6 text-[#8C6D58] dark:text-[#B18B70]" />
               </div>
             </div>
           </div>
@@ -516,32 +516,32 @@ const About = () => {
       </section>
 
       <section aria-labelledby="expertise-title" className="mx-auto max-w-7xl px-6 pb-24">
-        <div className="border-t border-[#EADFCF] pt-12">
+        <div className="border-t border-[#EADFCF] dark:border-white/10 pt-12">
           <div className="mb-8 max-w-2xl">
-            <p className="mb-3 text-xs font-bold uppercase tracking-[0.16em] text-[#8C6D58]">Areas of focus</p>
-            <h2 id="expertise-title" className="text-3xl font-bold tracking-tight text-[#1A1412] sm:text-4xl">Where strategy becomes action</h2>
+            <p className="mb-3 text-xs font-bold uppercase tracking-[0.16em] text-[#8C6D58] dark:text-[#B18B70]">Areas of focus</p>
+            <h2 id="expertise-title" className="text-3xl font-bold tracking-tight text-[#1A1412] sm:text-4xl dark:text-[#F5F0E9]">Where strategy becomes action</h2>
           </div>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-            <div className="p-8 rounded-3xl bg-[#F4EFE6] border border-[#EADFCF] hover:border-[#8C6D58]/50 transition-all shadow-sm">
-              <Target className="w-8 h-8 text-[#8C6D58] mb-4" />
-              <h3 className="text-lg font-bold text-[#1A1412] mb-2">Strategic Restructuring</h3>
-              <p className="text-[#5C4A3E] text-sm leading-relaxed">
+            <div className="p-8 rounded-3xl bg-[#F4EFE6] border border-[#EADFCF] hover:border-[#8C6D58]/50 transition-all shadow-sm dark:bg-[#191715] dark:border-white/10 hover:dark:border-[#B18B70]/50">
+              <Target className="w-8 h-8 text-[#8C6D58] dark:text-[#B18B70] mb-4" />
+              <h3 className="text-lg font-bold text-[#1A1412] dark:text-[#F5F0E9] mb-2">Strategic Restructuring</h3>
+              <p className="text-[#5C4A3E] dark:text-[#B8ADA1] text-sm leading-relaxed">
                 Designing internal control systems and capital allocation strategies that ensure operational efficiency.
               </p>
             </div>
 
-            <div className="p-8 rounded-3xl bg-[#F4EFE6] border border-[#EADFCF] hover:border-[#8C6D58]/50 transition-all shadow-sm">
-              <Briefcase className="w-8 h-8 text-[#8C6D58] mb-4" />
-              <h3 className="text-lg font-bold text-[#1A1412] mb-2">Healthcare Governance</h3>
-              <p className="text-[#5C4A3E] text-sm leading-relaxed">
+            <div className="p-8 rounded-3xl bg-[#F4EFE6] border border-[#EADFCF] hover:border-[#8C6D58]/50 transition-all shadow-sm dark:bg-[#191715] dark:border-white/10 hover:dark:border-[#B18B70]/50">
+              <Briefcase className="w-8 h-8 text-[#8C6D58] dark:text-[#B18B70] mb-4" />
+              <h3 className="text-lg font-bold text-[#1A1412] dark:text-[#F5F0E9] mb-2">Healthcare Governance</h3>
+              <p className="text-[#5C4A3E] dark:text-[#B8ADA1] text-sm leading-relaxed">
                 Directing administrative and fiscal growth at Deda Hospital Ltd to align clinical services with corporate profitability.
               </p>
             </div>
 
-            <div className="p-8 rounded-3xl bg-[#F4EFE6] border border-[#EADFCF] hover:border-[#8C6D58]/50 transition-all shadow-sm">
-              <ShieldCheck className="w-8 h-8 text-[#8C6D58] mb-4" />
-              <h3 className="text-lg font-bold text-[#1A1412] mb-2">Institutional Integrity</h3>
-              <p className="text-[#5C4A3E] text-sm leading-relaxed">
+            <div className="p-8 rounded-3xl bg-[#F4EFE6] border border-[#EADFCF] hover:border-[#8C6D58]/50 transition-all shadow-sm dark:bg-[#191715] dark:border-white/10 hover:dark:border-[#B18B70]/50">
+              <ShieldCheck className="w-8 h-8 text-[#8C6D58] dark:text-[#B18B70] mb-4" />
+              <h3 className="text-lg font-bold text-[#1A1412] dark:text-[#F5F0E9] mb-2">Institutional Integrity</h3>
+              <p className="text-[#5C4A3E] dark:text-[#B8ADA1] text-sm leading-relaxed">
                 Upholding governance standards across compliance, internal audits, and risk assessment models.
               </p>
             </div>
