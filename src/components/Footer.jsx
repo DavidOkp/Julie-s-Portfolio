@@ -23,7 +23,7 @@ const Footer = () => {
   }
 
   return (
-    <footer className="border-t border-[#2E231F] bg-[#1A1412] text-[#FDFBF7] mt-auto">
+    <footer className="relative z-10 border-t border-[#2E231F] bg-[#1A1412] text-[#FDFBF7] mt-auto">
       {/* Top Banner / Consultation Callout */}
       <div className="border-b border-[#2E231F]/80 bg-[#221B18]/60">
         <div className="max-w-7xl mx-auto px-6 py-8 sm:px-8 lg:px-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
