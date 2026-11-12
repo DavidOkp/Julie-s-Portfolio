@@ -316,7 +316,7 @@ const Insights = () => {
 
             <h2
               id="insights-title"
-              className="max-w-3xl text-4xl font-semibold leading-[1.08] tracking-[-0.045em] text-[#201813] sm:text-5xl lg:text-[64px]"
+              className="max-w-3xl text-3xl font-semibold leading-[1.08] tracking-[-0.045em] text-[#201813] sm:text-5xl lg:text-[64px]"
             >
               Strategic insights,
               <br />

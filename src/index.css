@@ -10,3 +10,39 @@ html,
 body {
   font-family: "Inter", sans-serif;
 }
+
+/* Elegant Bronze Typewriter Cursor */
+.typewriter-cursor::after {
+  content: '' !important;
+  display: inline-block;
+  width: 2.5px;
+  height: 0.82em;
+  background-color: #8C6D58;
+  margin-left: 2px;
+  vertical-align: -0.05em;
+  border-radius: 1px;
+  box-shadow: 0 0 8px rgba(140, 109, 88, 0.35);
+  animation: typewriter-cursor-blink 1s ease-in-out infinite !important;
+}
+
+@media (min-width: 640px) {
+  .typewriter-cursor::after {
+    width: 3px;
+    margin-left: 3px;
+  }
+}
+
+@keyframes typewriter-cursor-blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .typewriter-cursor::after {
+    display: none !important;
+  }
+}

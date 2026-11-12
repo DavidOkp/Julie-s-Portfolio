@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&family=Newsreader:ital,wght@1,300&display=swap">
+  <style>
+    body { background: #FDFBF7; color: #1A1412; font-family: Inter, sans-serif; padding: 40px; }
+    .headline {
+      max-width: 15ch;
+      font-size: 3rem;
+      font-weight: 800;
+      line-height: 1.08;
+      border: 1px dashed #ccc;
+      margin-bottom: 30px;
+    }
+    .highlight {
+      font-family: serif;
+      font-style: italic;
+      font-weight: 300;
+      color: #8C6D58;
+    }
+    .cursor {
+      display: inline-block;
+      width: 0;
+      height: 0.88em;
+      position: relative;
+      vertical-align: -0.05em;
+      pointer-events: none;
+    }
+    .cursor::after {
+      content: '';
+      position: absolute;
+      left: 1px;
+      top: 4%;
+      bottom: 4%;
+      width: 2.5px;
+      background: #8C6D58;
+      border-radius: 1px;
+    }
+  </style>
+</head>
+<body>
+  <h3>1. Normal Plain Text (Control)</h3>
+  <div id="control" class="headline">
+    How do you <span class="highlight">scale and structure</span> your business with absolute clarity?
+  </div>
+
+  <h3>2. Character Spans (with words grouped in inline-block)</h3>
+  <div id="grouped" class="headline"></div>
+
+  <h3>3. Character Spans (pure inline spans)</h3>
+  <div id="pure" class="headline"></div>
+
+  <script>
+    const textData = [
+      { text: 'How do you ', isHighlight: false },
+      { text: 'scale and structure', isHighlight: true },
+      { text: ' your business with absolute clarity?', isHighlight: false }
+    ];
+
+    // Build Grouped
+    const groupedEl = document.getElementById('grouped');
+    textData.forEach(seg => {
+      const segSpan = document.createElement('span');
+      if (seg.isHighlight) segSpan.className = 'highlight';
+      
+      const words = seg.text.split(' ');
+      words.forEach((word, wIdx) => {
+        if (word.length > 0) {
+          const wSpan = document.createElement('span');
+          wSpan.style.display = 'inline-block';
+          for (let c of word) {
+            const ch = document.createElement('span');
+            ch.textContent = c;
+            wSpan.appendChild(ch);
+          }
+          segSpan.appendChild(wSpan);
+        }
+        if (wIdx < words.length - 1) {
+          const sp = document.createElement('span');
+          sp.textContent = ' ';
+          segSpan.appendChild(sp);
+        }
+      });
+      groupedEl.appendChild(segSpan);
+    });
+
+    // Build Pure
+    const pureEl = document.getElementById('pure');
+    textData.forEach(seg => {
+      const segSpan = document.createElement('span');
+      if (seg.isHighlight) segSpan.className = 'highlight';
+      for (let c of seg.text) {
+        const ch = document.createElement('span');
+        ch.textContent = c;
+        segSpan.appendChild(ch);
+      }
+      pureEl.appendChild(segSpan);
+    });
+
+    console.log('Control height:', document.getElementById('control').offsetHeight);
+    console.log('Grouped height:', groupedEl.offsetHeight);
+    console.log('Pure height:', pureEl.offsetHeight);
+  </script>
+</body>
+</html>
