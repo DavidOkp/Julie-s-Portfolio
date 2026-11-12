@@ -1,4 +1,4 @@
-import { Sparkles, ArrowRight, ShieldCheck, TrendingUp, Building2, Users, FileText, Compass } from 'lucide-react'
+import { ArrowRight, ShieldCheck, TrendingUp, Building2, Users, FileText, Compass } from 'lucide-react'
 
 export const competencies = [
   {

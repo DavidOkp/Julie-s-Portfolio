@@ -1,5 +1,5 @@
 import React from 'react'
-import { Sparkles, Award, GraduationCap, Building, BookOpen, CheckCircle2 } from 'lucide-react'
+import { Lightbulb, Award, GraduationCap, Building, BookOpen, CheckCircle2 } from 'lucide-react'
 import { credentials } from '../data/credential.data'
 
 
@@ -10,7 +10,7 @@ const Credentials = () => {
         
         <div className="max-w-3xl mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#EADFCF]/60 border border-[#D9C7B0] text-[#5C4A3E] text-[11px] font-bold uppercase tracking-widest mb-6">
-            <Sparkles className="w-3.5 h-3.5 text-[#8C6D58]" />
+            <Lightbulb className="w-3.5 h-3.5 text-[#8C6D58]" />
             <span>Academic & Professional Pedigree</span>
           </div>
           <h1 className="text-4xl sm:text-6xl font-extrabold text-[#1A1412] tracking-tight mb-6">

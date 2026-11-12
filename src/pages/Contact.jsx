@@ -1,4 +1,4 @@
-import { Mail, MapPin, Send, Sparkles } from 'lucide-react'
+import { Mail, MapPin, Send, Lightbulb } from 'lucide-react'
 import { socialLinks } from '../data/social.data'
 import { SocialIcon } from '../components/SocialIcon'
 const Contact = () => {
@@ -7,7 +7,7 @@ const Contact = () => {
       <div className="max-w-7xl mx-auto ">
         <div className="max-w-3xl mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#EADFCF]/80 border border-[#D9C7B0] text-[#5C4A3E] text-[11px] font-bold tracking-widest mb-6">
-            <Sparkles className='w-3.5 h-3.5' />
+            <Lightbulb className='w-3.5 h-3.5' />
             <span>EXECUTIVE MANAGEMENT</span>
           </div>
           <h1 className=" text-4xl sm:text-6xl font-extrabold text-[#1A1412] tracking-tight mb-6">Schedule a Strategic <span className="font-light italic text-[#8C6D58] sm:text-6xl">Consultation</span></h1>

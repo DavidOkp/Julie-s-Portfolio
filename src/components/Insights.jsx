@@ -9,7 +9,7 @@ import '@fontsource/poppins/900.css'
 import {
   ArrowUpRight,
   ArrowRight,
-  Sparkles,
+  Lightbulb,
   Play,
   Clock3,
   Headphones,
@@ -309,7 +309,7 @@ const Insights = () => {
         <div className="mb-12 grid items-end gap-8 lg:mb-16 lg:grid-cols-[1fr_auto]">
           <div className="max-w-3xl">
             <div className="mb-5 inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.22em] text-[#8C6D58] sm:text-[11px]">
-              <Sparkles size={15} strokeWidth={1.7} />
+              <Lightbulb size={15} strokeWidth={1.7} />
               <span>Ideas. Perspective. Impact.</span>
               <span className="ml-1 h-px w-8 bg-[#B9A28E]" />
             </div>
@@ -423,7 +423,7 @@ const Insights = () => {
 
           <div className="relative max-w-2xl">
             <div className="mb-3 flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-[#C8AD93]">
-              <Sparkles size={14} />
+              <Lightbulb size={14} />
               Stay connected
             </div>
 

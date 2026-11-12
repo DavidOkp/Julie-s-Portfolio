@@ -1,4 +1,4 @@
-import { Sparkles, Award, GraduationCap, Building, BookOpen, CheckCircle2 } from 'lucide-react'
+import { Award, GraduationCap, Building, BookOpen, CheckCircle2 } from 'lucide-react'
 
 export const credentials = [
   {

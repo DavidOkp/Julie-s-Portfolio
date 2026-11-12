@@ -1,5 +1,5 @@
 import { Link, NavLink, useLocation } from 'react-router-dom'
-import { ArrowRight, ArrowUp, Mail, MapPin, Sparkles, ChevronRight } from 'lucide-react'
+import { ArrowRight, ArrowUp, Mail, MapPin, Lightbulb, ChevronRight } from 'lucide-react'
 import { navItems } from '../data/header.data'
 import { socialLinks } from '../data/social.data'
 import { SocialIcon } from './SocialIcon'
@@ -29,7 +29,7 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto px-6 py-8 sm:px-8 lg:px-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#2E231F] border border-[#4A3B32] text-[#D9C7B0] text-[11px] font-bold tracking-widest uppercase mb-3">
-              <Sparkles className="w-3 h-3 text-[#D9C7B0]" />
+              <Lightbulb className="w-3 h-3 text-[#D9C7B0]" />
               <span>Executive Advisory</span>
             </div>
             <h3 className="text-xl sm:text-2xl font-bold text-[#FDFBF7]">

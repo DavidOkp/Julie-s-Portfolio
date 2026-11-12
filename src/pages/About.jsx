@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import {
   ArrowRight,
   Award,
-  Sparkles,
+  Lightbulb,
   Target,
   ShieldCheck,
   Briefcase,
@@ -158,7 +158,7 @@ const About = () => {
                   >
                     {/* Eyebrow / Tag */}
                     <div className="mb-3.5 sm:mb-6 inline-flex flex-wrap items-center gap-1.5 sm:gap-2 rounded-full border border-[#D9C7B0]/80 bg-[#FDFBF7]/90 px-2.5 sm:px-4 py-1 sm:py-2 text-[8.5px] sm:text-[11px] font-bold uppercase tracking-[0.08em] sm:tracking-[0.14em] text-[#5C4A3E] shadow-[0_8px_24px_rgba(26,20,18,0.04)] backdrop-blur-sm">
-                      <Sparkles className="h-2.5 w-2.5 sm:h-3.5 sm:w-3.5 text-[#8C6D58]" />
+                      <Lightbulb className="h-2.5 w-2.5 sm:h-3.5 sm:w-3.5 text-[#8C6D58]" />
                       <span>{slide.tag}</span>
                       <span className="hidden sm:inline text-[#8C6D58]/60">•</span>
                       <span className="hidden sm:inline text-[#8C6D58] font-semibold">{slide.badge}</span>
@@ -476,7 +476,7 @@ const About = () => {
                 <div className="mb-6 flex items-center justify-between">
                   <span className="inline-flex items-center gap-1.5 rounded-full border border-[#524138] bg-[#382C27]/70 px-3 py-1 text-[10px] font-extrabold uppercase tracking-widest
                     text-[#D9C7B0]">
-                    <Sparkles className="h-3 w-3 text-[#D9C7B0]" /> Vision & Leadership
+                    <Lightbulb className="h-3 w-3 text-[#D9C7B0]" /> Vision & Leadership
                   </span>
                   <Quote className="h-8 w-8 text-[#8C6D58]/40" />
                 </div>

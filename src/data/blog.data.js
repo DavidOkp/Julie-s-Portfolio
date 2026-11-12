@@ -1,4 +1,4 @@
-import { Sparkles, ArrowRight, Calendar, Clock, BookOpen } from 'lucide-react'
+import { ArrowRight, Calendar, Clock, BookOpen } from 'lucide-react'
 
 export const blogPosts = [
   {
