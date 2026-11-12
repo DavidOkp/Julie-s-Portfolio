@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
   ArrowRight,
@@ -17,11 +17,13 @@ import profileImage from '../assets/juliee-onuh.jpeg'
 import image2 from '../assets/black-pose2.png'
 import image3 from '../assets/image-seating.jpeg'
 import Insights from '../components/Insights'
+import TypewriterHeadline from '../components/TypewriterHeadline'
 import { heroSlides } from '../data/hero.data'
 
 
 const About = () => {
   const [heroSlide, setHeroSlide] = useState(0)
+  const [slideResetKey, setSlideResetKey] = useState(0)
   const [isPaused, setIsPaused] = useState(false)
   const [progress, setProgress] = useState(0)
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -46,6 +48,7 @@ const About = () => {
       setProgress((prev) => {
         if (prev >= 100) {
           setHeroSlide((current) => (current + 1) % heroSlides.length)
+          setSlideResetKey((k) => k + 1)
           return 0
         }
         return prev + step
@@ -58,11 +61,13 @@ const About = () => {
   const nextHeroSlide = () => {
     setHeroSlide((prev) => (prev + 1) % heroSlides.length)
     setProgress(0)
+    setSlideResetKey((k) => k + 1)
   }
 
   const prevHeroSlide = () => {
     setHeroSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length)
     setProgress(0)
+    setSlideResetKey((k) => k + 1)
   }
 
   // Mobile Touch Swipe Handlers
@@ -160,12 +165,15 @@ const About = () => {
                     </div>
 
                     {/* Headline */}
-                    <h1 id="about-hero-title" className="mb-4 sm:mb-6 max-w-[15ch] text-3xl sm:text-5xl lg:text-[4.2rem] xl:text-[4.5rem] font-extrabold leading-[1.12] sm:leading-[1.04] text-[#1A1412]">
-                      {slide.titleStart}
-                      <span className="font-serif italic font-light text-[#8C6D58]">
-                        {slide.titleHighlight}
-                      </span>
-                      {slide.titleEnd}
+                    <h1 id={isActive ? "about-hero-title" : undefined} className="mb-4 sm:mb-6 max-w-[15ch] text-3xl sm:text-5xl lg:text-[4.2rem] xl:text-[4.5rem] font-extrabold leading-[1.12] sm:leading-[1.04] text-[#1A1412]">
+                      <TypewriterHeadline
+                        titleStart={slide.titleStart}
+                        titleHighlight={slide.titleHighlight}
+                        titleEnd={slide.titleEnd}
+                        isActive={isActive}
+                        isPaused={isPaused}
+                        resetKey={slideResetKey}
+                      />
                     </h1>
 
                     <div
@@ -193,6 +201,7 @@ const About = () => {
                                 e.stopPropagation()
                                 setHeroSlide(dotIdx)
                                 setProgress(0)
+                                setSlideResetKey((k) => k + 1)
                               }}
                               aria-label={`Jump to slide ${dotIdx + 1}`}
                               className={`h-1.5 rounded-full transition-all duration-300 ${dotIdx === heroSlide ? 'w-5 bg-[#D9C7B0]' : 'w-1.5 bg-white/40'
@@ -274,6 +283,7 @@ const About = () => {
                       onClick={() => {
                         setHeroSlide(index)
                         setProgress(0)
+                        setSlideResetKey((k) => k + 1)
                       }}
                       className="group flex flex-col text-left cursor-pointer transition-all focus:outline-none"
                       aria-label={`Jump to slide ${index + 1}`}
@@ -374,7 +384,6 @@ const About = () => {
             {heroSlides[heroSlide].badgePill} • <span className="text-[#D9C7B0]">Juliana Ede Onuh</span>
           </p>
         </div>
-
       </section>
 
       <section>
