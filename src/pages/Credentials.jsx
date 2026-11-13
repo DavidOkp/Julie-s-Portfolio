@@ -29,11 +29,11 @@ const Credentials = () => {
                 as="article"
                 key={i} 
                 delay={i * 70}
-                className="p-8 sm:p-10 rounded-3xl bg-[#F4EFE6] border border-[#EADFCF] hover:border-[#8C6D58] transition-all shadow-sm flex flex-col justify-between motion-lift dark:bg-[#191715] dark:border-white/10 hover:dark:border-[#B18B70]"
+                className="p-5 sm:p-10 rounded-3xl bg-[#F4EFE6] border border-[#EADFCF] hover:border-[#8C6D58] transition-all shadow-sm flex flex-col justify-between motion-lift dark:bg-[#191715] dark:border-white/10 hover:dark:border-[#B18B70]"
               >
                 <div>
                   <div className="flex items-center justify-between mb-6">
-                    <span className="px-3.5 py-1 rounded-full bg-[#1A1412] text-[#D9C7B0] text-[10px] font-bold uppercase tracking-widest dark:bg-[#211E1B] dark:text-[#B18B70]">
+                    <span className="px-3.5 py-1 rounded-full bg-[#1A1412] text-[#D9C7B0] text-[7px] sm:text-[10px] font-bold uppercase tracking-widest dark:bg-[#211E1B] dark:text-[#B18B70]">
                       {item.type}
                     </span>
                     <Icon className="w-6 h-6 text-[#8C6D58] dark:text-[#B18B70]" />
