@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
+import brandImage from '../assets/red-head-shot.png'
 
 const statusStages = [
   { threshold: 25, label: 'Initializing portfolio...' },
@@ -99,7 +100,11 @@ export const PageLoader = () => {
           <div className="fixed inset-0 z-[99] pointer-events-none flex items-center justify-center bg-[#1A1412]/15 backdrop-blur-[2px] transition-all duration-300">
             <div className="flex items-center gap-3 rounded-2xl border border-[#D9C7B0]/30 bg-[#1A1412]/90 px-5 py-3 shadow-[0_12px_36px_rgba(0,0,0,0.5)] backdrop-blur-md">
               <div className="relative flex h-8 w-8 items-center justify-center rounded-xl bg-[#2C221E] border border-[#8C6D58]">
-                <span className="text-xs font-black text-[#FDFBF7]">J</span>
+                <img
+                  src={brandImage}
+                  alt="Juliana Onuh"
+                  className="h-full w-full rounded-xl object-cover object-[center_28%]"
+                />
                 <span className="absolute -top-1 -right-1 flex h-2 w-2">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#D9C7B0] opacity-75"></span>
                   <span className="relative inline-flex h-2 w-2 rounded-full bg-[#D9C7B0]"></span>
@@ -138,20 +143,22 @@ export const PageLoader = () => {
 
           <div className="relative flex flex-col items-center text-center px-6 max-w-sm w-full">
             
-            {/* Geometric Monogram Emblem with Pulsing Ring */}
+            {/* Portrait Emblem with Pulsing Ring */}
             <div className="relative mb-8 flex items-center justify-center">
               <div className="absolute -inset-3 rounded-2xl border border-[#D9C7B0]/20 animate-ping opacity-30" />
               <div className="relative flex h-16 w-16 items-center justify-center rounded-2xl bg-[#1F1714] border border-[#5C4A3E]/70 shadow-[0_8px_30px_rgba(0,0,0,0.5)]">
-                <span className="text-2xl font-black tracking-tight text-[#FDFBF7]">
-                  J
-                </span>
+                <img
+                  src={brandImage}
+                  alt="Juliana Onuh"
+                  className="h-full w-full rounded-full object-cover object-[center_28%]"
+                />
               </div>
             </div>
 
             {/* Brand Title & Subtitle */}
             <div className="flex flex-col items-center gap-1.5 mb-8">
               <span className="text-base sm:text-lg font-extrabold tracking-[0.24em] text-[#FDFBF7] uppercase">
-                Juliana Ede Onuh
+                Juliana Onuh
               </span>
               <span className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.22em] text-[#8C6D58]">
                 Executive Portfolio & Advisory

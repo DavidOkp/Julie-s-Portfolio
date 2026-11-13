@@ -1,14 +1,161 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --font-sans: "Inter", sans-serif;
   --font-sans-serif: "Inter", sans-serif;
 }
 
+:root {
+  color-scheme: light;
+  /* Light Mode Design Tokens */
+  --bg-main: #FDFBF7;
+  --bg-secondary: #F4EFE6;
+  --bg-tertiary: #F5EFE6;
+  --bg-elevated: #FFFFFF;
+  --text-primary: #1A1412;
+  --text-secondary: #5C4A3E;
+  --accent-primary: #8C6D58;
+  --accent-secondary: #D9C7B0;
+  --border-subtle: #EADFCF;
+}
+
+html.dark {
+  color-scheme: dark;
+  /* Dark Mode Design Tokens (Premium Luxury Direction) */
+  --bg-main: #11100F;
+  --bg-secondary: #191715;
+  --bg-tertiary: #161412;
+  --bg-elevated: #211E1B;
+  --text-primary: #F5F0E9;
+  --text-secondary: #B8ADA1;
+  --accent-primary: #B18B70;
+  --accent-secondary: #8C6D58;
+  --border-subtle: rgba(255, 255, 255, 0.10);
+}
+
 html,
 body {
   font-family: "Inter", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.scroll-reveal {
+  opacity: 0;
+  transform: translate3d(0, 20px, 0);
+  transition:
+    opacity 620ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 620ms cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.motion-lift {
+  transition-property: transform, box-shadow, border-color, background-color;
+  transition-duration: 240ms;
+  transition-timing-function: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.motion-lift:hover {
+  transform: translate3d(0, -4px, 0);
+}
+
+.motion-arrow svg {
+  transition: transform 220ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.motion-arrow:hover svg {
+  transform: translate3d(3px, 0, 0);
+}
+
+.nav-underline {
+  position: relative;
+}
+
+.nav-underline::after {
+  position: absolute;
+  right: 1rem;
+  bottom: 0.35rem;
+  left: 1rem;
+  height: 1px;
+  content: '';
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 220ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.nav-underline:hover::after,
+.nav-underline[aria-current='page']::after {
+  transform: scaleX(1);
+}
+
+input,
+select,
+textarea {
+  transition: border-color 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+}
+
+/* Global Polished Theme Transition (Active only during user theme changes) */
+html.theme-transition,
+html.theme-transition *,
+html.theme-transition *::before,
+html.theme-transition *::after {
+  transition: background-color 260ms cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 260ms cubic-bezier(0.4, 0, 0.2, 1),
+              color 260ms cubic-bezier(0.4, 0, 0.2, 1),
+              fill 260ms cubic-bezier(0.4, 0, 0.2, 1),
+              stroke 260ms cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 260ms cubic-bezier(0.4, 0, 0.2, 1) !important;
+  transition-delay: 0s !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .scroll-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .motion-lift,
+  .motion-arrow svg,
+  .nav-underline::after,
+  input,
+  select,
+  textarea {
+    transition-duration: 0.01ms !important;
+  }
+
+  html.theme-transition,
+  html.theme-transition *,
+  html.theme-transition *::before,
+  html.theme-transition *::after {
+    transition: none !important;
+  }
+}
+
+/* Text Selection */
+::selection {
+  background-color: #D9C7B0;
+  color: #1A1412;
+}
+
+html.dark ::selection {
+  background-color: #8C6D58;
+  color: #FDFBF7;
 }
 
 /* Elegant Bronze Typewriter Cursor */
@@ -23,6 +170,11 @@ body {
   border-radius: 1px;
   box-shadow: 0 0 8px rgba(140, 109, 88, 0.35);
   animation: typewriter-cursor-blink 1s ease-in-out infinite !important;
+}
+
+html.dark .typewriter-cursor::after {
+  background-color: #B18B70;
+  box-shadow: 0 0 10px rgba(177, 139, 112, 0.45);
 }
 
 @media (min-width: 640px) {
