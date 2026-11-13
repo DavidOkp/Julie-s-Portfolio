@@ -212,7 +212,7 @@ const Insights = () => {
           {card.category}
         </div>
 
-        <h3 className="font-serif text-3xl font-normal leading-[1.15] tracking-[-0.035em] text-[#241B15] sm:text-4xl xl:text-[35px] dark:text-[#F5F0E9]">
+        <h3 className="font-sans-serif text-3xl font-normal leading-[1.15] tracking-[-0.035em] text-[#241B15] sm:text-4xl xl:text-[35px] dark:text-[#F5F0E9]">
           {card.title}
         </h3>
 
@@ -271,7 +271,7 @@ const Insights = () => {
           <span className="text-[10px] text-[#8A7868] dark:text-[#B8ADA1]">{card.metaText}</span>
         </div>
 
-        <h3 className="font-serif text-xl leading-snug tracking-[-0.025em] text-[#241B15] transition-colors group-hover:text-[#8C6D58] sm:text-2xl dark:text-[#F5F0E9] dark:group-hover:text-[#B18B70]">
+        <h3 className="font-sans-serif text-xl leading-snug tracking-[-0.025em] text-[#241B15] transition-colors group-hover:text-[#8C6D58] sm:text-2xl dark:text-[#F5F0E9] dark:group-hover:text-[#B18B70]">
           {renderCardLink(card, card.title, 'outline-none focus-visible:underline')}
         </h3>
 

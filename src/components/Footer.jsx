@@ -62,7 +62,7 @@ const Footer = () => {
               </div>
               <div className="flex flex-col gap-0.5">
                 <span className="text-base font-extrabold leading-none tracking-wide text-[#FDFBF7]">
-                  JULIANA E. ONUH
+                  JULIANA ONUH
                 </span>
                 <span className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#D9C7B0]">
                   Executive Portfolio & Advisory
@@ -223,7 +223,7 @@ const Footer = () => {
       <div className="border-t border-[#2E231F] bg-[#140F0D]">
         <div className="max-w-7xl mx-auto px-6 py-6 sm:px-8 lg:px-12 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#8C6D58]">
           <p>
-            &copy; {new Date().getFullYear()} Juliana Ede Onuh, FCCA. All rights reserved.
+            &copy; {new Date().getFullYear()} Juliana Onuh, FCCA. All rights reserved.
           </p>
 
           <div className="flex items-center gap-4 text-[11px] text-[#A69282]">

@@ -32,9 +32,9 @@ const About = () => {
   const [touchEnd, setTouchEnd] = useState(null)
 
   const carouselImages = [
-    { src: profileImage, alt: "Juliana Ede Onuh - Executive Portrait" },
-    { src: image2, alt: "Juliana Ede Onuh - Strategic Consultation" },
-    { src: image3, alt: "Juliana Ede Onuh - Advisory & Leadership" },
+    { src: profileImage, alt: "Juliana Onuh - Executive Portrait" },
+    { src: image2, alt: "Juliana Onuh - Strategic Consultation" },
+    { src: image3, alt: "Juliana Onuh - Advisory & Leadership" },
   ]
 
   useEffect(() => {
@@ -225,7 +225,7 @@ const About = () => {
                               <p className="text-[9px] font-extrabold uppercase tracking-widest text-[#D9C7B0]">
                                 {slide.badgePill}
                               </p>
-                              <p className="text-xs font-semibold text-[#FDFBF7]">Juliana Ede Onuh • FCCA</p>
+                              <p className="text-xs font-semibold text-[#FDFBF7]">Juliana Onuh • FCCA</p>
                             </div>
                           </div>
                           <span className="flex items-center gap-1.5 text-[10px] text-emerald-400 font-medium">
@@ -381,7 +381,7 @@ const About = () => {
         <div className="pointer-events-none absolute bottom-8 right-8 z-20 hidden xl:flex items-center gap-3 rounded-2xl border border-[#382C27]/40 bg-[#1A1412]/80 px-4 py-2.5 text-[#FDFBF7] shadow-xl backdrop-blur-md dark:border-white/10 dark:bg-[#191715]/90 dark:text-[#F5F0E9]">
           <span className="h-2 w-2 rounded-full bg-emerald-400" />
           <p className="text-[11px] font-semibold tracking-wide">
-            {heroSlides[heroSlide].badgePill} • <span className="text-[#D9C7B0] dark:text-[#B18B70]">Juliana Ede Onuh</span>
+            {heroSlides[heroSlide].badgePill} • <span className="text-[#D9C7B0] dark:text-[#B18B70]">Juliana Onuh</span>
           </p>
         </div>
       </section>
@@ -456,7 +456,7 @@ const About = () => {
                   shadow-2xl backdrop-blur-md dark:border-white/10 dark:bg-[#191715]/90">
                   <div>
                     <p className="text-[10px] font-extrabold uppercase tracking-widest text-[#D9C7B0]">Executive Profile</p>
-                    <p className="text-sm font-semibold text-[#FDFBF7]">Juliana Ede Onuh • FCCA</p>
+                    <p className="text-sm font-semibold text-[#FDFBF7]">Juliana Onuh • FCCA</p>
                   </div>
                   <span className="h-2 w-2 rounded-full bg-emerald-400" aria-label="Available for advisory" />
                 </div>

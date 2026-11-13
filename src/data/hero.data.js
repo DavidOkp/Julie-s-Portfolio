@@ -11,7 +11,7 @@ export const heroSlides = [
         titleHighlight: 'scale and structure',
         titleEnd: ' your business with absolute clarity?',
         description:
-            'It begins where financial discipline meets operational courage. Guided by 14+ years as Co-Founder and CFO at Deda Hospital Ltd, I combine institutional governance with dedicated, hands-on advisory—helping visionaries turn complex financial architecture into clear roadmaps for resilient scale.',
+            'It begins where financial discipline meets operational courage. Guided by 14+ years as Co-Founder and CFO at Deda Hospital Ltd, I combine institutional governance with dedicated, hands-on advisory-helping visionaries turn complex financial architecture into clear roadmaps for resilient scale.',
         accentQuote: 'Wherever you are on your growth journey, I am here to help you thrive.',
         metric: '14+ Years',
         metricLabel: 'Co-Founder & CFO Leadership',

@@ -21,7 +21,7 @@ const Contact = () => {
               <span className="text-[12px] font-bold uppercase tracking-widest text-[#D9C7B0] block mb-2">
                 DIRECT OFFICE AND CORPORATE INFO
               </span>
-              <h2 className="text-2xl sm:text-3xl mb-4 pt-2">Juliana Ede Onuh ⦁ FCCA</h2>
+              <h2 className="text-2xl sm:text-3xl mb-4 pt-2">Juliana Onuh ⦁ FCCA</h2>
 
               <div className="flex flex-col mt-8 gap-8">
                 <div className="flex flex-row gap-4 items-center">
@@ -33,7 +33,7 @@ const Contact = () => {
                       EXECUTIVE OFFICE
                     </span>
                     <p className="text-[#F5EFE6] text-sm leading-relaxed">
-                      Juliana Ede Onuh Executive Advisory
+                      Juliana Onuh Executive Advisory
                     </p>
                   </div>
                 </div>

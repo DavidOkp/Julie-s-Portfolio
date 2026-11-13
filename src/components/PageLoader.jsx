@@ -151,7 +151,7 @@ export const PageLoader = () => {
             {/* Brand Title & Subtitle */}
             <div className="flex flex-col items-center gap-1.5 mb-8">
               <span className="text-base sm:text-lg font-extrabold tracking-[0.24em] text-[#FDFBF7] uppercase">
-                Juliana Ede Onuh
+                Juliana Onuh
               </span>
               <span className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.22em] text-[#8C6D58]">
                 Executive Portfolio & Advisory

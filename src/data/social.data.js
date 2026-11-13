@@ -30,7 +30,7 @@ export const socialLinks = [
   {
     name: 'Spotify',
     url: 'https://open.spotify.com/user/julianaedeonuh',
-    handle: 'Juliana Ede Onuh',
+    handle: 'Juliana Onuh',
     category: 'Podcasts & Discussions',
     icon: 'spotify',
   },
