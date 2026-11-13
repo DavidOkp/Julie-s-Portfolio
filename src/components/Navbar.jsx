@@ -58,7 +58,7 @@ const Navbar = () => {
                 key={item.name}
                 to={item.path}
                 className={({ isActive }) =>
-                  `whitespace-nowrap rounded-full px-4 py-3 text-[13px] font-medium transition-all ${
+                  `nav-underline whitespace-nowrap rounded-full px-4 py-3 text-[13px] font-medium transition-all ${
                     isActive || (item.path === '/about' && location.pathname === '/')
                       ? 'bg-white text-[#1A1412] shadow-[0_4px_14px_rgba(26,20,18,0.08)] dark:bg-[#211E1B] dark:text-[#F5F0E9] dark:shadow-[0_4px_14px_rgba(0,0,0,0.4)]'
                       : 'text-[#5C4A3E] hover:bg-[#F4EFE6] hover:text-[#1A1412] dark:text-[#B8ADA1] dark:hover:bg-[#211E1B]/60 dark:hover:text-[#F5F0E9]'
@@ -75,7 +75,7 @@ const Navbar = () => {
             <ThemeToggle />
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 rounded-full bg-[#1A1412] px-6 py-3.5 text-[13px] font-semibold text-[#FDFBF7] shadow-[0_8px_20px_rgba(26,20,18,0.12)] transition-colors hover:bg-[#382C27] dark:bg-[#F5F0E9] dark:text-[#11100F] dark:hover:bg-[#EADFCF]"
+              className="motion-arrow inline-flex items-center gap-2 rounded-full bg-[#1A1412] px-6 py-3.5 text-[13px] font-semibold text-[#FDFBF7] shadow-[0_8px_20px_rgba(26,20,18,0.12)] transition-colors hover:bg-[#382C27] dark:bg-[#F5F0E9] dark:text-[#11100F] dark:hover:bg-[#EADFCF]"
             >
               <span>Let’s talk</span>
               <ArrowRight className="h-4 w-4" />
@@ -171,7 +171,7 @@ const Navbar = () => {
         <div className="border-t border-[#EADFCF] bg-[#F4EFE6] p-6 dark:border-white/10 dark:bg-[#191715]">
           <Link
             to="/contact"
-            className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#1A1412] py-3.5 text-sm font-semibold text-[#FDFBF7] shadow-md transition-colors hover:bg-[#382C27] dark:bg-[#F5F0E9] dark:text-[#11100F] dark:hover:bg-[#EADFCF]"
+              className="motion-arrow inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#1A1412] py-3.5 text-sm font-semibold text-[#FDFBF7] shadow-md transition-colors hover:bg-[#382C27] dark:bg-[#F5F0E9] dark:text-[#11100F] dark:hover:bg-[#EADFCF]"
           >
             <span>Book Consultation</span>
             <ArrowRight className="h-4 w-4 text-[#D9C7B0] dark:text-[#8C6D58]" />

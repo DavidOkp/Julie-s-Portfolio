@@ -3,6 +3,7 @@ import { ArrowRight, ArrowUp, Mail, MapPin, Lightbulb, ChevronRight } from 'luci
 import { navItems } from '../data/header.data'
 import { socialLinks } from '../data/social.data'
 import { SocialIcon } from './SocialIcon'
+import brandImage from '../assets/red-head-shot.png'
 
 const focusAreas = [
   { name: 'Healthcare Financial Governance', path: '/expertise' },
@@ -42,7 +43,7 @@ const Footer = () => {
 
           <Link
             to="/contact"
-            className="inline-flex items-center gap-2 rounded-full bg-[#FDFBF7] px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-[#1A1412] shadow-lg transition-all hover:bg-[#EADFCF] shrink-0"
+            className="motion-arrow inline-flex items-center gap-2 rounded-full bg-[#FDFBF7] px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-[#1A1412] shadow-lg transition-all hover:bg-[#EADFCF] shrink-0"
           >
             <span>Book Consultation</span>
             <ArrowRight className="w-4 h-4" />
@@ -57,9 +58,11 @@ const Footer = () => {
           {/* Brand Profile & Social Media Column */}
           <div className="lg:col-span-4 flex flex-col gap-5">
             <Link to="/" className="flex items-center gap-3 shrink-0 group w-fit">
-              <div className="flex h-11 w-11 items-center justify-center rounded-[14px] bg-[#2C221E] border border-[#4A3B32] text-lg font-extrabold tracking-tight text-[#FDFBF7] shadow-md group-hover:border-[#8C6D58] transition-colors">
-                J
-              </div>
+              <img
+                src={brandImage}
+                alt="Juliana Onuh"
+                className="h-11 w-11 rounded-[14px] object-cover object-[center_28%] shadow-[0_8px_20px_rgba(26,20,18,0.12)] dark:border dark:border-white/10 dark:shadow-[0_8px_20px_rgba(0,0,0,0.5)]"
+              />
               <div className="flex flex-col gap-0.5">
                 <span className="text-base font-extrabold leading-none tracking-wide text-[#FDFBF7]">
                   JULIANA ONUH
@@ -103,7 +106,7 @@ const Footer = () => {
                     rel="noopener noreferrer"
                     aria-label={`Visit Juliana on ${social.name}`}
                     title={`${social.name} (${social.handle})`}
-                    className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#221B18] border border-[#382C27] text-[#C2B2A3] transition-all hover:bg-[#8C6D58] hover:text-[#FDFBF7] hover:border-[#D9C7B0] hover:-translate-y-0.5 hover:shadow-md"
+                    className="motion-lift flex h-10 w-10 items-center justify-center rounded-xl bg-[#221B18] border border-[#382C27] text-[#C2B2A3] transition-all hover:bg-[#8C6D58] hover:text-[#FDFBF7] hover:border-[#D9C7B0] hover:-translate-y-0.5 hover:shadow-md"
                   >
                     <SocialIcon name={social.icon} className="w-4 h-4" />
                   </a>
@@ -186,19 +189,19 @@ const Footer = () => {
               <div className="flex flex-col gap-3">
                 <Link
                   to="/contact"
-                  className="w-full text-center rounded-xl bg-[#2C221E] hover:bg-[#382C27] border border-[#4A3B32] hover:border-[#8C6D58] py-2.5 px-3 text-xs font-medium text-[#FDFBF7] transition-all"
+                  className="motion-lift w-full text-center rounded-xl bg-[#2C221E] hover:bg-[#382C27] border border-[#4A3B32] hover:border-[#8C6D58] py-2.5 px-3 text-xs font-medium text-[#FDFBF7] transition-all"
                 >
                   Contact Juliana
                 </Link>
                 <Link
                   to="/credentials"
-                  className="w-full text-center rounded-xl bg-[#2C221E] hover:bg-[#382C27] border border-[#4A3B32] hover:border-[#8C6D58] py-2.5 px-3 text-xs font-medium text-[#FDFBF7] transition-all"
+                  className="motion-lift w-full text-center rounded-xl bg-[#2C221E] hover:bg-[#382C27] border border-[#4A3B32] hover:border-[#8C6D58] py-2.5 px-3 text-xs font-medium text-[#FDFBF7] transition-all"
                 >
                   View Credentials
                 </Link>
                 <Link
                   to="/blog"
-                  className="w-full text-center rounded-xl bg-[#2C221E] hover:bg-[#382C27] border border-[#4A3B32] hover:border-[#8C6D58] py-2.5 px-3 text-xs font-medium text-[#FDFBF7] transition-all"
+                  className="motion-lift w-full text-center rounded-xl bg-[#2C221E] hover:bg-[#382C27] border border-[#4A3B32] hover:border-[#8C6D58] py-2.5 px-3 text-xs font-medium text-[#FDFBF7] transition-all"
                 >
                   Read Articles
                 </Link>

@@ -41,6 +41,70 @@ body {
   font-family: "Inter", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+.scroll-reveal {
+  opacity: 0;
+  transform: translate3d(0, 20px, 0);
+  transition:
+    opacity 620ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 620ms cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.motion-lift {
+  transition-property: transform, box-shadow, border-color, background-color;
+  transition-duration: 240ms;
+  transition-timing-function: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.motion-lift:hover {
+  transform: translate3d(0, -4px, 0);
+}
+
+.motion-arrow svg {
+  transition: transform 220ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.motion-arrow:hover svg {
+  transform: translate3d(3px, 0, 0);
+}
+
+.nav-underline {
+  position: relative;
+}
+
+.nav-underline::after {
+  position: absolute;
+  right: 1rem;
+  bottom: 0.35rem;
+  left: 1rem;
+  height: 1px;
+  content: '';
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 220ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.nav-underline:hover::after,
+.nav-underline[aria-current='page']::after {
+  transform: scaleX(1);
+}
+
+input,
+select,
+textarea {
+  transition: border-color 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+}
+
 /* Global Polished Theme Transition (Active only during user theme changes) */
 html.theme-transition,
 html.theme-transition *,
@@ -56,6 +120,25 @@ html.theme-transition *::after {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .scroll-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .motion-lift,
+  .motion-arrow svg,
+  .nav-underline::after,
+  input,
+  select,
+  textarea {
+    transition-duration: 0.01ms !important;
+  }
+
   html.theme-transition,
   html.theme-transition *,
   html.theme-transition *::before,

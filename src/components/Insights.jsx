@@ -16,6 +16,7 @@ import {
   Video,
   Layers3,
 } from 'lucide-react'
+import ScrollReveal from './ScrollReveal'
 import {
   siYoutube,
   siSpotify,
@@ -169,9 +170,10 @@ const Insights = () => {
   )
 
   const renderFeaturedCard = (card) => (
-    <article
+    <ScrollReveal
+      as="article"
       key={card.id}
-      className="group grid min-w-0 overflow-hidden rounded-[24px] border border-[#E6D9CA] bg-[#FDFBF7] lg:grid-cols-[1.08fr_0.92fr] dark:border-white/10 dark:bg-[#191715]"
+      className="group grid min-w-0 overflow-hidden rounded-[24px] border border-[#E6D9CA] bg-[#FDFBF7] lg:grid-cols-[1.08fr_0.92fr] motion-lift dark:border-white/10 dark:bg-[#191715]"
     >
       {renderCardLink(
         card,
@@ -233,12 +235,14 @@ const Insights = () => {
           )}
         </div>
       </div>
-    </article>
+    </ScrollReveal>
   )
 
-  const renderSupportingCard = (card) => (
-    <article
+  const renderSupportingCard = (card, index) => (
+    <ScrollReveal
+      as="article"
       key={card.id}
+      delay={index * 70}
       className="group flex min-w-0 flex-col border-t border-[#DCCDBD] pt-5 dark:border-white/10"
     >
       {renderCardLink(
@@ -287,7 +291,7 @@ const Insights = () => {
           />
         </div>
       </div>
-    </article>
+    </ScrollReveal>
   )
 
   return (
@@ -307,7 +311,7 @@ const Insights = () => {
 
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
         <div className="mb-12 grid items-end gap-8 lg:mb-16 lg:grid-cols-[1fr_auto]">
-          <div className="max-w-3xl">
+          <ScrollReveal className="max-w-3xl">
             <div className="mb-5 inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.22em] text-[#8C6D58] sm:text-[11px] dark:text-[#B18B70]">
               <Lightbulb size={15} strokeWidth={1.7} />
               <span>Ideas. Perspective. Impact.</span>
@@ -329,7 +333,7 @@ const Insights = () => {
               Perspectives on financial leadership, governance, business growth
               and the decisions that shape resilient organisations.
             </p>
-          </div>
+          </ScrollReveal>
 
           <div className="flex flex-wrap items-center gap-2 lg:justify-end">
             {Object.entries(platformConfig).map(([key, platform]) => (
@@ -411,7 +415,7 @@ const Insights = () => {
           </div>
         )}
 
-        <div className="relative mt-16 overflow-hidden rounded-[24px] bg-[#211913] px-6 py-8 text-white sm:px-10 sm:py-10 lg:flex lg:items-center lg:justify-between lg:gap-10 dark:bg-[#191715] dark:border dark:border-white/10">
+        <ScrollReveal as="aside" className="relative mt-16 overflow-hidden rounded-[24px] bg-[#211913] px-6 py-8 text-white sm:px-10 sm:py-10 lg:flex lg:items-center lg:justify-between lg:gap-10 dark:bg-[#191715] dark:border dark:border-white/10">
           <div
             aria-hidden="true"
             className="pointer-events-none absolute -right-16 -top-36 h-72 w-72 rounded-full border border-white/[0.07]"
@@ -452,7 +456,7 @@ const Insights = () => {
               <ArrowRight size={15} />
             </a>
           </div>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   )

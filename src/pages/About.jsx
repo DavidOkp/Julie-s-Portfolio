@@ -18,6 +18,7 @@ import image2 from '../assets/black-pose2.png'
 import image3 from '../assets/image-seating.jpeg'
 import Insights from '../components/Insights'
 import TypewriterHeadline from '../components/TypewriterHeadline'
+import ScrollReveal from '../components/ScrollReveal'
 import { heroSlides } from '../data/hero.data'
 
 
@@ -250,7 +251,7 @@ const About = () => {
                     <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-6">
                       <Link
                         to={slide.ctaLink}
-                        className="group inline-flex items-center justify-between sm:justify-center gap-3 rounded-2xl border border-[#382C27] bg-[#1A1412] px-6 py-3.5 sm:py-4 text-xs font-bold uppercase tracking-wider text-[#FDFBF7] shadow-xl transition-all duration-300 hover:bg-[#2C221E] hover:border-[#8C6D58]/60 hover:shadow-2xl active:scale-[0.98] dark:border-white/15 dark:bg-[#F5F0E9] dark:text-[#11100F] dark:hover:bg-[#EADFCF] dark:shadow-[0_8px_25px_rgba(0,0,0,0.4)]"
+                        className="motion-arrow group inline-flex items-center justify-between sm:justify-center gap-3 rounded-2xl border border-[#382C27] bg-[#1A1412] px-6 py-3.5 sm:py-4 text-xs font-bold uppercase tracking-wider text-[#FDFBF7] shadow-xl transition-all duration-300 hover:bg-[#2C221E] hover:border-[#8C6D58]/60 hover:shadow-2xl active:scale-[0.98] dark:border-white/15 dark:bg-[#F5F0E9] dark:text-[#11100F] dark:hover:bg-[#EADFCF] dark:shadow-[0_8px_25px_rgba(0,0,0,0.4)]"
                       >
                         <span>{slide.ctaText}</span>
                         <span className="flex h-6 w-6 items-center justify-center rounded-lg bg-[#382C27] text-[#D9C7B0] transition-transform duration-300 group-hover:translate-x-1 group-hover:bg-[#8C6D58] group-hover:text-white dark:bg-[#EADFCF] dark:text-[#11100F] group-hover:dark:bg-[#8C6D58] group-hover:dark:text-white">
@@ -390,7 +391,8 @@ const About = () => {
         <Insights />
       </section>
 
-      <section
+      <ScrollReveal
+        as="section"
         aria-labelledby="vision-title"
         className="mx-auto max-auto px-6 py-20 sm:px-10 sm:pb-24 lg:px-40 bg-[radial-gradient(ellipse_at_18%_45%,#fffefa_0%,#FDFBF7_58%,#F4EFE6_100%)] dark:bg-[radial-gradient(ellipse_at_18%_45%,#1c1917_0%,#11100F_58%,#161412_100%)]"
       >
@@ -513,38 +515,38 @@ const About = () => {
           </div>
 
         </div>
-      </section>
+      </ScrollReveal>
 
       <section aria-labelledby="expertise-title" className="mx-auto max-w-7xl px-6 pb-24">
         <div className="border-t border-[#EADFCF] dark:border-white/10 pt-12">
-          <div className="mb-8 max-w-2xl">
+          <ScrollReveal className="mb-8 max-w-2xl">
             <p className="mb-3 text-xs font-bold uppercase tracking-[0.16em] text-[#8C6D58] dark:text-[#B18B70]">Areas of focus</p>
             <h2 id="expertise-title" className="text-3xl font-bold tracking-tight text-[#1A1412] sm:text-4xl dark:text-[#F5F0E9]">Where strategy becomes action</h2>
-          </div>
+          </ScrollReveal>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-            <div className="p-8 rounded-3xl bg-[#F4EFE6] border border-[#EADFCF] hover:border-[#8C6D58]/50 transition-all shadow-sm dark:bg-[#191715] dark:border-white/10 hover:dark:border-[#B18B70]/50">
+            <ScrollReveal as="article" className="p-8 rounded-3xl bg-[#F4EFE6] border border-[#EADFCF] hover:border-[#8C6D58]/50 transition-all shadow-sm motion-lift dark:bg-[#191715] dark:border-white/10 hover:dark:border-[#B18B70]/50">
               <Target className="w-8 h-8 text-[#8C6D58] dark:text-[#B18B70] mb-4" />
               <h3 className="text-lg font-bold text-[#1A1412] dark:text-[#F5F0E9] mb-2">Strategic Restructuring</h3>
               <p className="text-[#5C4A3E] dark:text-[#B8ADA1] text-sm leading-relaxed">
                 Designing internal control systems and capital allocation strategies that ensure operational efficiency.
               </p>
-            </div>
+            </ScrollReveal>
 
-            <div className="p-8 rounded-3xl bg-[#F4EFE6] border border-[#EADFCF] hover:border-[#8C6D58]/50 transition-all shadow-sm dark:bg-[#191715] dark:border-white/10 hover:dark:border-[#B18B70]/50">
+            <ScrollReveal as="article" delay={80} className="p-8 rounded-3xl bg-[#F4EFE6] border border-[#EADFCF] hover:border-[#8C6D58]/50 transition-all shadow-sm motion-lift dark:bg-[#191715] dark:border-white/10 hover:dark:border-[#B18B70]/50">
               <Briefcase className="w-8 h-8 text-[#8C6D58] dark:text-[#B18B70] mb-4" />
               <h3 className="text-lg font-bold text-[#1A1412] dark:text-[#F5F0E9] mb-2">Healthcare Governance</h3>
               <p className="text-[#5C4A3E] dark:text-[#B8ADA1] text-sm leading-relaxed">
                 Directing administrative and fiscal growth at Deda Hospital Ltd to align clinical services with corporate profitability.
               </p>
-            </div>
+            </ScrollReveal>
 
-            <div className="p-8 rounded-3xl bg-[#F4EFE6] border border-[#EADFCF] hover:border-[#8C6D58]/50 transition-all shadow-sm dark:bg-[#191715] dark:border-white/10 hover:dark:border-[#B18B70]/50">
+            <ScrollReveal as="article" delay={160} className="p-8 rounded-3xl bg-[#F4EFE6] border border-[#EADFCF] hover:border-[#8C6D58]/50 transition-all shadow-sm motion-lift dark:bg-[#191715] dark:border-white/10 hover:dark:border-[#B18B70]/50">
               <ShieldCheck className="w-8 h-8 text-[#8C6D58] dark:text-[#B18B70] mb-4" />
               <h3 className="text-lg font-bold text-[#1A1412] dark:text-[#F5F0E9] mb-2">Institutional Integrity</h3>
               <p className="text-[#5C4A3E] dark:text-[#B8ADA1] text-sm leading-relaxed">
                 Upholding governance standards across compliance, internal audits, and risk assessment models.
               </p>
-            </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>

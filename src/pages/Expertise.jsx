@@ -1,6 +1,7 @@
 import { Lightbulb, ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { competencies } from '../data/expertise.data'
+import ScrollReveal from '../components/ScrollReveal'
 
 
 
@@ -9,7 +10,7 @@ const Expertise = () => {
     <div className="py-12 pb-24 px-6 bg-[#F5EFE6] min-h-[calc(100vh-80px)] dark:bg-[#11100F]">
       <div className="max-w-7xl mx-auto">
         
-        <div className="max-w-3xl mb-16">
+        <ScrollReveal className="max-w-3xl mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#EADFCF]/80 border border-[#D9C7B0] text-[#5C4A3E] text-[11px] font-bold uppercase tracking-widest mb-6 dark:border-white/10 dark:bg-[#211E1B] dark:text-[#B8ADA1]">
             <Lightbulb className="w-3.5 h-3.5 text-[#8C6D58]" />
             <span>Core Competencies</span>
@@ -20,15 +21,17 @@ const Expertise = () => {
           <p className="text-[#5C4A3E] text-lg leading-relaxed dark:text-[#B8ADA1]">
             Strategic advisory and operational leadership grounded in 14+ years of institutional finance, healthcare management, and enterprise governance.
           </p>
-        </div>
+        </ScrollReveal>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {competencies.map((card, idx) => {
             const Icon = card.icon
             return (
-              <div 
+              <ScrollReveal
+                as="article"
                 key={idx}
-                className="p-8 rounded-3xl bg-[#FDFBF7] border border-[#EADFCF] hover:border-[#8C6D58] transition-all hover:shadow-lg flex flex-col justify-between group dark:bg-[#191715] dark:border-white/10 hover:dark:border-[#B18B70]"
+                delay={idx * 65}
+                className="p-8 rounded-3xl bg-[#FDFBF7] border border-[#EADFCF] hover:border-[#8C6D58] transition-all hover:shadow-lg flex flex-col justify-between group motion-lift dark:bg-[#191715] dark:border-white/10 hover:dark:border-[#B18B70]"
               >
                 <div>
                   <div className="flex items-center justify-between mb-6">
@@ -44,12 +47,12 @@ const Expertise = () => {
                     {card.desc}
                   </p>
                 </div>
-              </div>
+              </ScrollReveal>
             )
           })}
         </div>
 
-        <div className="p-8 sm:p-12 rounded-3xl bg-[#1A1412] text-[#FDFBF7] flex flex-col sm:flex-row items-center justify-between gap-8 border border-[#382C27] shadow-xl dark:bg-[#191715] dark:border-white/10">
+        <ScrollReveal as="section" className="p-8 sm:p-12 rounded-3xl bg-[#1A1412] text-[#FDFBF7] flex flex-col sm:flex-row items-center justify-between gap-8 border border-[#382C27] shadow-xl dark:bg-[#191715] dark:border-white/10">
           <div className="max-w-2xl">
             <span className="text-[10px] font-bold uppercase tracking-widest text-[#D9C7B0] block mb-2 dark:text-[#B18B70]">
               Advisory Engagement
@@ -60,12 +63,12 @@ const Expertise = () => {
           </div>
           <Link
             to="/contact"
-            className="inline-flex items-center gap-2 bg-[#8C6D58] hover:bg-[#A3826C] text-[#FDFBF7] font-semibold px-8 py-3.5 rounded-full text-xs uppercase tracking-wider transition-all whitespace-nowrap shadow-md dark:bg-[#B18B70] dark:hover:bg-[#C09A7F] dark:text-[#11100F]"
+            className="motion-arrow inline-flex items-center gap-2 bg-[#8C6D58] hover:bg-[#A3826C] text-[#FDFBF7] font-semibold px-8 py-3.5 rounded-full text-xs uppercase tracking-wider transition-all whitespace-nowrap shadow-md dark:bg-[#B18B70] dark:hover:bg-[#C09A7F] dark:text-[#11100F]"
           >
             <span>Book Consultation</span>
             <ArrowRight className="w-4 h-4" />
           </Link>
-        </div>
+        </ScrollReveal>
 
       </div>
     </div>
