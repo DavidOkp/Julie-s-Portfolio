@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
   ArrowRight,
@@ -22,12 +22,74 @@ import ScrollReveal from '../components/ScrollReveal'
 import { heroSlides } from '../data/hero.data'
 
 
+const TYPEWRITER_TYPING_SPEED_MS = 40
+const TYPEWRITER_PAUSE_DURATION_MS = 1300
+const TYPEWRITER_ERASING_SPEED_MS = 22
+const TYPEWRITER_SETTLE_DELAY_MS = 120
+const REDUCED_MOTION_SLIDE_DURATION_MS = 5000
+const MAX_PROGRESS_FRAME_DELTA_MS = 100
+
 const About = () => {
   const [heroSlide, setHeroSlide] = useState(0)
   const [slideResetKey, setSlideResetKey] = useState(0)
   const [isPaused, setIsPaused] = useState(false)
-  const [progress, setProgress] = useState(0)
   const [currentSlide, setCurrentSlide] = useState(0)
+
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(() => {
+    if (typeof window === 'undefined') return false
+    return window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  })
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
+    const handleChange = (e) => setPrefersReducedMotion(e.matches)
+    mediaQuery.addEventListener('change', handleChange)
+    return () => mediaQuery.removeEventListener('change', handleChange)
+  }, [])
+
+  const [isSplashActive, setIsSplashActive] = useState(true)
+
+  useEffect(() => {
+    if (typeof document === 'undefined') return
+
+    let observer = null
+    const rafId = requestAnimationFrame(() => {
+      const splashEl = document.querySelector('div[role="status"].fixed.inset-0')
+      if (!splashEl) {
+        setIsSplashActive(false)
+        return
+      }
+      const observeTarget = splashEl.parentNode || document.body
+      observer = new MutationObserver(() => {
+        if (!splashEl.isConnected) {
+          setIsSplashActive(false)
+          observer?.disconnect()
+        }
+      })
+      observer.observe(observeTarget, { childList: true })
+    })
+
+    return () => {
+      cancelAnimationFrame(rafId)
+      observer?.disconnect()
+    }
+  }, [])
+
+  const slideResetKeyRef = useRef(slideResetKey)
+  const isPausedRef = useRef(isPaused)
+  const lastCompletedResetKeyRef = useRef(-1)
+  const progressBarRefs = useRef([])
+  const progressCycleRef = useRef('')
+  const progressElapsedRef = useRef(0)
+
+  useEffect(() => {
+    slideResetKeyRef.current = slideResetKey
+  }, [slideResetKey])
+
+  useEffect(() => {
+    isPausedRef.current = isPaused
+  }, [isPaused])
 
   const [touchStart, setTouchStart] = useState(null)
   const [touchEnd, setTouchEnd] = useState(null)
@@ -38,36 +100,90 @@ const About = () => {
     { src: image3, alt: "Juliana Onuh - Advisory & Leadership" },
   ]
 
+  // GPU-composited progress bar animation without triggering React re-renders on About
   useEffect(() => {
-    if (isPaused) return
+    const cycleKey = `${heroSlide}-${slideResetKey}`
+    if (progressCycleRef.current !== cycleKey) {
+      progressCycleRef.current = cycleKey
+      progressElapsedRef.current = 0
+      progressBarRefs.current.forEach((el) => {
+        if (el) el.style.transform = 'scaleX(0)'
+      })
+    }
 
-    const intervalTime = 50
-    const totalDuration = 5000
-    const step = (intervalTime / totalDuration) * 100
+    if (isPaused || isSplashActive) return
 
-    const timer = setInterval(() => {
-      setProgress((prev) => {
-        if (prev >= 100) {
+    const activeSlide = heroSlides[heroSlide]
+    const activeHeadlineLength =
+      (activeSlide.titleStart?.length || 0) +
+      (activeSlide.titleHighlight?.length || 0) +
+      (activeSlide.titleEnd?.length || 0)
+
+    const totalDuration = prefersReducedMotion
+      ? REDUCED_MOTION_SLIDE_DURATION_MS
+      : activeHeadlineLength * (TYPEWRITER_TYPING_SPEED_MS + TYPEWRITER_ERASING_SPEED_MS) +
+        TYPEWRITER_PAUSE_DURATION_MS +
+        TYPEWRITER_SETTLE_DELAY_MS
+
+    let rafId = null
+    let lastTime = null
+
+    const stepProgress = (now) => {
+      if (lastTime === null) {
+        lastTime = now
+      }
+      const dt = Math.min(Math.max(now - lastTime, 0), MAX_PROGRESS_FRAME_DELTA_MS)
+      lastTime = now
+
+      progressElapsedRef.current += dt
+      const ratio = Math.min(progressElapsedRef.current / totalDuration, 1)
+
+      const activeBar = progressBarRefs.current[heroSlide]
+      if (activeBar) {
+        activeBar.style.transform = `scaleX(${ratio})`
+      }
+
+      if (ratio >= 1) {
+        if (prefersReducedMotion) {
           setHeroSlide((current) => (current + 1) % heroSlides.length)
           setSlideResetKey((k) => k + 1)
-          return 0
         }
-        return prev + step
-      })
-    }, intervalTime)
+        // In normal motion mode, wait cleanly at scaleX(1) for TypewriterHeadline onComplete
+        return
+      }
 
-    return () => clearInterval(timer)
-  }, [isPaused])
+      rafId = requestAnimationFrame(stepProgress)
+    }
+
+    rafId = requestAnimationFrame(stepProgress)
+
+    return () => {
+      if (rafId !== null) {
+        cancelAnimationFrame(rafId)
+      }
+    }
+  }, [isPaused, isSplashActive, prefersReducedMotion, heroSlide, slideResetKey])
+
+  const handleHeadlineComplete = useCallback((completedResetKey) => {
+    if (
+      isPausedRef.current ||
+      completedResetKey !== slideResetKeyRef.current ||
+      lastCompletedResetKeyRef.current === completedResetKey
+    ) {
+      return
+    }
+    lastCompletedResetKeyRef.current = completedResetKey
+    setHeroSlide((current) => (current + 1) % heroSlides.length)
+    setSlideResetKey((k) => k + 1)
+  }, [])
 
   const nextHeroSlide = () => {
     setHeroSlide((prev) => (prev + 1) % heroSlides.length)
-    setProgress(0)
     setSlideResetKey((k) => k + 1)
   }
 
   const prevHeroSlide = () => {
     setHeroSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length)
-    setProgress(0)
     setSlideResetKey((k) => k + 1)
   }
 
@@ -152,7 +268,7 @@ const About = () => {
                 return (
                   <div
                     key={slide.id}
-                    className={`transition-all duration-700 ease-out ${isActive
+                    className={`transition-[opacity,transform] duration-700 ease-out ${isActive
                       ? 'opacity-100 translate-y-0 relative z-10'
                       : 'opacity-0 translate-y-6 pointer-events-none absolute inset-0 z-0'
                       }`}
@@ -174,6 +290,13 @@ const About = () => {
                         isActive={isActive}
                         isPaused={isPaused}
                         resetKey={slideResetKey}
+                        typingSpeed={TYPEWRITER_TYPING_SPEED_MS}
+                        pauseDuration={TYPEWRITER_PAUSE_DURATION_MS}
+                        erasingSpeed={TYPEWRITER_ERASING_SPEED_MS}
+                        settleDelay={TYPEWRITER_SETTLE_DELAY_MS}
+                        prefersReducedMotion={prefersReducedMotion}
+                        isSplashActive={isSplashActive}
+                        onComplete={handleHeadlineComplete}
                       />
                     </h1>
 
@@ -187,6 +310,7 @@ const About = () => {
                         <img
                           src={slide.image}
                           alt={slide.tag}
+                          decoding="async"
                           className="h-full w-full object-cover object-top filter contrast-[1.03] transition-transform duration-700 ease-out"
                         />
 
@@ -201,7 +325,6 @@ const About = () => {
                               onClick={(e) => {
                                 e.stopPropagation()
                                 setHeroSlide(dotIdx)
-                                setProgress(0)
                                 setSlideResetKey((k) => k + 1)
                               }}
                               aria-label={`Jump to slide ${dotIdx + 1}`}
@@ -283,7 +406,6 @@ const About = () => {
                       key={slide.id}
                       onClick={() => {
                         setHeroSlide(index)
-                        setProgress(0)
                         setSlideResetKey((k) => k + 1)
                       }}
                       className="group flex flex-col text-left cursor-pointer transition-all focus:outline-none"
@@ -301,12 +423,15 @@ const About = () => {
                         </span>
                       </div>
 
-                      {/* Animated Progress Bar */}
+                      {/* Animated Progress Bar (GPU-composited scaleX, zero React re-renders) */}
                       <div className="h-1 w-full sm:w-28 md:w-36 rounded-full bg-[#EADFCF] dark:bg-[#211E1B] overflow-hidden">
                         <div
-                          className={`h-full bg-[#8C6D58] dark:bg-[#B18B70] rounded-full transition-all ${isActive ? 'duration-100 ease-linear' : 'duration-300 w-0'
+                          ref={(el) => {
+                            progressBarRefs.current[index] = el
+                          }}
+                          className={`h-full w-full origin-left bg-[#8C6D58] dark:bg-[#B18B70] rounded-full will-change-transform ${isActive ? '' : 'transition-transform duration-300'
                             }`}
-                          style={{ width: isActive ? `${progress}%` : '0%' }}
+                          style={{ transform: 'scaleX(0)' }}
                         />
                       </div>
                     </button>
@@ -369,7 +494,8 @@ const About = () => {
                 key={slide.id}
                 src={slide.image}
                 alt={slide.tag}
-                className={`absolute inset-0 h-full w-full object-contain object-right-bottom filter contrast-[1.02] transition-all duration-1000 ease-in-out ${isActive
+                decoding="async"
+                className={`absolute inset-0 h-full w-full object-contain object-right-bottom filter contrast-[1.02] transition-[opacity,transform] duration-1000 ease-in-out ${isActive
                   ? 'opacity-100 scale-100 z-10'
                   : 'opacity-0 scale-105 pointer-events-none z-0'
                   }`}
