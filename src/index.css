@@ -169,6 +169,7 @@ html.dark ::selection {
   vertical-align: -0.05em;
   border-radius: 1px;
   box-shadow: 0 0 8px rgba(140, 109, 88, 0.35);
+  will-change: opacity;
   animation: typewriter-cursor-blink 1s ease-in-out infinite !important;
 }
 
