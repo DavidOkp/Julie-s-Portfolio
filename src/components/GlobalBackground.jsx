@@ -1,4 +1,4 @@
-import globalBg from '../assets/global.bg.jpeg'
+import globalBg from '../assets/global.bg.webp'
 
 const GlobalBackground = () => {
   return (

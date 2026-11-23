@@ -13,9 +13,9 @@ import {
   ChevronLeft,
   ChevronRight
 } from 'lucide-react'
-import profileImage from '../assets/juliee-onuh.jpeg'
-import image2 from '../assets/black-pose2.png'
-import image3 from '../assets/image-seating.jpeg'
+import profileImage from '../assets/juliee-onuh.webp'
+import image2 from '../assets/black-pose.webp'
+import image3 from '../assets/image-seating.webp'
 import Insights from '../components/Insights'
 import TypewriterHeadline from '../components/TypewriterHeadline'
 import ScrollReveal from '../components/ScrollReveal'

@@ -5,7 +5,7 @@ import { navItems } from '../data/header.data'
 import { socialLinks } from '../data/social.data'
 import { SocialIcon } from './SocialIcon'
 import { ThemeToggle } from './ThemeToggle'
-import brandImage from '../assets/red-head-shot.png'
+import brandImage from '../assets/red-head-shot.webp'
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
