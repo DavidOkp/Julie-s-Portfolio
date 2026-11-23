@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
-import brandImage from '../assets/red-head-shot.png'
+import brandImage from '../assets/red-head-shot.webp'
 
 const statusStages = [
   { threshold: 25, label: 'Initializing portfolio...' },

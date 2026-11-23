@@ -3,7 +3,7 @@ import { ArrowRight, ArrowUp, Mail, MapPin, Lightbulb, ChevronRight } from 'luci
 import { navItems } from '../data/header.data'
 import { socialLinks } from '../data/social.data'
 import { SocialIcon } from './SocialIcon'
-import brandImage from '../assets/red-head-shot.png'
+import brandImage from '../assets/red-head-shot.webp'
 
 const focusAreas = [
   { name: 'Healthcare Financial Governance', path: '/expertise' },

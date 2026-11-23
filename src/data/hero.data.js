@@ -1,6 +1,6 @@
-import headshotImage from '../assets/red-head-shot.png'
-import image2 from '../assets/black-pose2.png'
-import image3 from '../assets/image-seating.jpeg'
+import headshotImage from '../assets/red-head-shot.webp'
+import image2 from '../assets/black-pose.webp'
+import image3 from '../assets/image-seating.webp'
 
 export const heroSlides = [
     {
